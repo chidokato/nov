@@ -10,18 +10,14 @@ use Image;
 use File;
 
 use App\Models\Setting;
-use App\Models\SettingTranslation;
 use Illuminate\Support\Facades\Auth;
 
 class SettingController extends Controller
 {
     public function index()
     {
-        $locale = Session::get('locale');
-        $setting = SettingTranslation::get();
-        $data = SettingTranslation::where('locale', $locale)->first();
-        $id = Setting::where('id','1')->first();
-        return view('admin.setting.index', compact('setting', 'data', 'id'));
+        $data = Setting::find('1');
+        return view('admin.setting.index', compact('data'));
     }
 
     public function update(Request $request, $id)

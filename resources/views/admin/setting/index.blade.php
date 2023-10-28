@@ -3,7 +3,7 @@
 @section('content')
 @include('admin.alert')
 
-<form method="POST" action="{{route('setting.update', [$id->id])}}" enctype="multipart/form-data">
+<form method="POST" action="{{route('setting.update', [$data->id])}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow fixed">
