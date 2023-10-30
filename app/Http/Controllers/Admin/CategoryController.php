@@ -79,7 +79,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $data = Category::find($id);
-        $category = Category::where('sort_by', 'Product')->get();
+        $category = Category::where('sort_by', $data->sort_by)->get();
         return view('admin.category.edit', compact('data', 'category'));
     }
 

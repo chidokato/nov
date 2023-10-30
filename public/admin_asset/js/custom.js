@@ -130,3 +130,28 @@ $(document).ready(function(){
         });
     });
 }); // xóa ảnh trong db
+
+
+$(document).ready(function(){
+    $("input#status").click(function(){
+        var status = $(this).is(':checked');
+        var id = $(this).parents('#category').find('input[id="id"]').val();
+        // alert(id);
+        $.ajax({
+            url:  'ajax/update_status_category/'+id+'/'+status, type: 'GET', cache: false, data: {
+            },
+        });
+    });
+}); // update status
+
+$(document).ready(function(){
+    $("input#status_post").click(function(){
+        var status = $(this).is(':checked');
+        var id = $(this).parents('#post').find('input[id="id"]').val();
+        // alert(status);
+        $.ajax({
+            url:  'ajax/update_status_post/'+id+'/'+status, type: 'GET', cache: false, data: {
+            },
+        });
+    });
+}); // update status

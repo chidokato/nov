@@ -66,7 +66,7 @@
                         <td><input type="text" id="view" value="{{$val->view}}" name="" class="form-control cat_view"></td>
                         <td>{{$val->sort_by}}</td>
                         <td>
-                            <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='home' ><span class="checkmark"></span></label>
+                            <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status' ><span class="checkmark"></span></label>
                         </td>
                         <td>{{$val->user->name}}</td>
                         <td class="date">{{date('d/m/Y',strtotime($val->created_at))}} <sup title="Sửa lần cuối: {{date('d/m/Y',strtotime($val->updated_at))}}"><i class="fa fa-question-circle-o" aria-hidden="true"></i></sup> </td>

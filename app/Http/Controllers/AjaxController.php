@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Image;
 use File;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Images;
 use App\Models\ProvinceTranslation;
 use App\Models\DistrictTranslation;
@@ -101,5 +102,19 @@ class AjaxController extends Controller
             
             SectionTranslation::find($value->id)->delete();
         }
+    }
+
+    public function update_status_category($id, $status)
+    {
+        $category = Category::find($id);
+        $category->status = $status;
+        $category->save();
+    }
+
+    public function update_status_post($id, $status)
+    {
+        $Post = Post::find($id);
+        $Post->status = $status;
+        $Post->save();
     }
 }

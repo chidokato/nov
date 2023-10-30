@@ -44,6 +44,12 @@
                                   <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Slug</label>
+                                  <input value="{{$data->slug}}" name="slug" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Content</label>
@@ -97,12 +103,7 @@
                           <input value="{{$data->icon}}" name="icon" placeholder="Icon" type="text" class="form-control">
                       </div>
                   </div>
-                  <div class="col-md-12">
-                      <div class="form-group">
-                          <label>Slug</label>
-                          <input value="{{$data->slug}}" name="slug" placeholder="..." type="text" class="form-control">
-                      </div>
-                  </div>
+                  
               </div>
             </div>
 
