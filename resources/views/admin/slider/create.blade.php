@@ -27,127 +27,27 @@
 <div class="row">
   <div class="col-xl-6 col-lg-6">
         <div class="card shadow mb-2">
-            <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Tiếng Việt</a></li>
-                    <li><a data-toggle="tab" class="nav-link" href="#en">Tiếng Anh</a></li>
-                    <li><a data-toggle="tab" class="nav-link" href="#cn">Tiếng Trung</a></li>
-                </ul>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
             </div>
-            <div class="tab-content overflow">
-                <div class="tab-pane active" id="vi">
+            <div class="overflow">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>heading1</label>
-                                  <input name="heading1:vi" placeholder="..." type="text" class="form-control">
+                                  <label>name</label>
+                                  <input name="name" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>heading2</label>
-                                  <input name="heading2:vi" placeholder="..." type="text" class="form-control">
+                                  <label>Content</label>
+                                  <textarea name="content" rows="4" class="form-control"></textarea>
                               </div>
                           </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text1</label>
-                                  <input name="text1:vi" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text2</label>
-                                  <input name="text2:vi" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>link</label>
-                                  <input name="link:vi" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          
                       </div>
                   </div>
-                </div>
-                <div class="tab-pane" id="en">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>heading1</label>
-                                  <input name="heading1:en" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>heading2</label>
-                                  <input name="heading2:en" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text1</label>
-                                  <input name="text1:en" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text2</label>
-                                  <input name="text2:en" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>link</label>
-                                  <input name="link:en" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                </div>
-                <div class="tab-pane" id="cn">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>heading1</label>
-                                  <input name="heading1:cn" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>heading2</label>
-                                  <input name="heading2:cn" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text1</label>
-                                  <input name="text1:cn" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text2</label>
-                                  <input name="text2:cn" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>link</label>
-                                  <input name="link:cn" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                </div>
             </div>
-            
         </div>
     </div>
     <div class="col-xl-6 col-lg-6">

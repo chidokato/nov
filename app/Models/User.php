@@ -46,6 +46,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Category::class, 'user_id', 'id');
     }
+    public function Post()
+    {
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+    public function Slider()
+    {
+        return $this->hasMany(Slider::class, 'user_id', 'id');
+    }
 }
 
 

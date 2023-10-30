@@ -4,7 +4,7 @@
 @include('admin.layout.header')
 @include('admin.alert')
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex">
-    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">{{__('lang.slider')}}</h2>
+    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Quản lý slider</h2>
     <a class="add-iteam" href="{{route('slider.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{__('lang.add')}}</button></a>
 </div>
 
@@ -24,21 +24,24 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Heading</th>
+                                <th>Hình ảnh slider</th>
                                 <th></th>
-                                <th>date</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($data as $val)
                             <tr>
-                                <td><a href="{{route('slider.edit',[$val->slider_id])}}" class="mr-2">{{$val->heading1}}</a></td>
-                                <td>{{$val->heading2}}</td>
-                                <td>{{$val->updated_at}}</td>
-                                <td style="display: flex;">
-                                    <a href="{{route('slider.edit',[$val->slider_id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                                    <form action="{{route('slider.destroy', [$val->slider_id])}}" method="POST">
+                                <td class="thumb"><img src="data/home/{{$val->img}}"></td>
+                                <td>
+                                    <div><a href="{{route('slider.edit',[$val->id])}}" class="mr-2">{{$val->name}}</a></div>
+                                    <div>{{$val->content}}</div>
+                                    <div>User: {{$val->User->yourname}}</div>
+                                    <div>Date: {{$val->updated_at}}</div>
+                                </td>
+                                <td>
+                                    <a href="{{route('slider.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <form action="{{route('slider.destroy', [$val->id])}}" method="POST">
                                       @method('DELETE')
                                       @csrf
                                       <button style="padding: 0" class="button_none" onclick="return confirm('Bạn muốn xóa bản ghi ?')"><i class="fas fa-trash-alt"></i></button>
@@ -54,4 +57,9 @@
         </div>
     </div>
 </div>
+
+<style type="text/css">
+    .thumb img{ height:150px }
+</style>
+
 @endsection

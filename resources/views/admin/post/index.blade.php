@@ -26,9 +26,11 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
+                                <th>Category</th>
                                 <th>Status</th>
-                                <th>Sort By</th>
+                                <!-- <th>Sort By</th> -->
                                 <th>date</th>
+                                <th>User</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -36,13 +38,15 @@
                             @foreach($post as $val)
                             <tr id="post">
                                 <input type="hidden" name="id" id="id" value="{{$val->id}}" >
-                                <td>{{$val->id}}</td>
+                                <td class="thumb"><img src="data/news/{{$val->img}}"></td>
                                 <td><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></td>
+                                <td>{{$val->category->name}}</td>
                                 <td>
                                     <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status_post' ><span class="checkmark"></span></label>
                                 </td>
-                                <td>{{$val->sort_by}}</td>
+                                <!-- <td>{{$val->sort_by}}</td> -->
                                 <td>{{$val->updated_at}}</td>
+                                <td>{{$val->User->yourname}}</td>
                                 <td style="display: flex;">
                                     <a href="{{route('post.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
                                     <form action="{{route('post.destroy', [$val->id])}}" method="POST">
@@ -62,4 +66,9 @@
         </div>
     </div>
 </div>
+
+<style type="text/css">
+    .thumb{ padding:0px !important; width:43px; margin:0px; }
+    .thumb img{ width:43px; height:43px; object-fit:cover; }
+</style>
 @endsection

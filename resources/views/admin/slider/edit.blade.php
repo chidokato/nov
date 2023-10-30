@@ -29,56 +29,28 @@
   <div class="col-xl-6 col-lg-6">
         <div class="card shadow mb-2">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                <ul class="nav nav-pills">
-                    @foreach($data->SliderTranslation as $key => $val)
-                    <li><a data-toggle="tab" class="nav-link <?php if($key==0){echo 'active';} ?>" href="#{{$val->locale}}">
-                      @if($val->locale == 'vi') Tiếng Việt @endif
-                      @if($val->locale == 'en') Tiếng Anh @endif
-                      @if($val->locale == 'cn') Tiếng Trung @endif
-                    </a></li>
-                    @endforeach
-                </ul>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
+                </div>
             </div>
-            <div class="tab-content overflow">
-              @foreach($data->SliderTranslation as $key => $val)
-                <div class="tab-pane <?php if($key==0){echo 'active';} ?>" id="{{$val->locale}}">
+            <div class="overflow">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>heading1</label>
-                                  <input name="heading1:{{$val->locale}}" value="{{$val->heading1}}" placeholder="..." type="text" class="form-control">
+                                  <label>Name</label>
+                                  <input name="name" value="{{$data->name}}" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>heading2</label>
-                                  <input name="heading2:{{$val->locale}}" value="{{$val->heading2}}"  placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text1</label>
-                                  <input name="text1:{{$val->locale}}" value="{{$val->text1}}" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>text2</label>
-                                  <input name="text2:{{$val->locale}}" value="{{$val->text2}}" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>link</label>
-                                  <input name="link:{{$val->locale}}" value="{{$val->link}}" placeholder="..." type="text" class="form-control">
+                                  <label>Content</label>
+                                  <textarea name="content" class="form-control" rows="5">{{$data->content}}</textarea>
                               </div>
                           </div>
                           
                       </div>
                   </div>
-                </div>
-                @endforeach
             </div>
             
         </div>

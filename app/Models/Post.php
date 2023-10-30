@@ -14,4 +14,8 @@ class Post extends Model
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+    public function User()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

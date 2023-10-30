@@ -29,59 +29,66 @@
 <div class="row">
   <div class="col-xl-6 col-lg-6">
         <div class="card shadow mb-2">
-            <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                <ul class="nav nav-pills">
-                    @foreach($setting as $key => $val)
-                    <li><a data-toggle="tab" class="nav-link <?php if($key==0){echo 'active';} ?>" href="#{{$val->locale}}">
-                      @if($val->locale == 'vi') Tiếng Việt @endif
-                      @if($val->locale == 'en') Tiếng Anh @endif
-                      @if($val->locale == 'cn') Tiếng Trung @endif
-                    </a></li>
-                    @endforeach
-                </ul>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Cấu hình</h6>
             </div>
             <div class="tab-content overflow">
-              @foreach($setting as $key => $val)
-                <div class="tab-pane <?php if($key==0){echo 'active';} ?>" id="{{$val->locale}}">
+                <div class="tab-pane active">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Name</label>
-                                  <input value="{{$val->name}}" name="name:{{$val->locale}}" placeholder="..." type="text" class="form-control">
+                                  <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>address</label>
-                                  <input value="{{$val->address}}" name="address:{{$val->locale}}" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>title</label>
-                                  <input value="{{$val->title}}" name="title:{{$val->locale}}" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>description</label>
-                                  <input value="{{$val->description}}" name="description:{{$val->locale}}" placeholder="..." type="text" class="form-control">
+                                  <input value="{{$data->address}}" name="address" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>footer</label>
-                                  <textarea class="form-control" id="ckeditor{{ $key==0 ? '' : $key }}" name="footer">{!! $data->footer !!}</textarea>
+                                  <textarea class="form-control" rows="5" name="footer">{!! $data->footer !!}</textarea>
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>footer</label>
+                                  <textarea class="form-control" rows="5" name="header">{!! $data->footer !!}</textarea>
                               </div>
                           </div>
                       </div>
                   </div>
                 </div>
-                @endforeach
-                
             </div>
-            
+        </div>
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>title</label>
+                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>description</label>
+                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="col-xl-6 col-lg-6">
@@ -118,7 +125,6 @@
                     <div class="col-md-12">
                       <label>maps</label>
                         <div class="form-group">
-                            
                             <textarea class="form-control" rows="6" name="maps">{!! $data->maps !!}</textarea>
                         </div>
                     </div>
@@ -144,6 +150,7 @@
             </div>
 
         </div>
+
       </div>
 </div>
 </form>

@@ -12,8 +12,6 @@ use Image;
 use File;
 
 use App\Models\Slider;
-use App\Models\SliderTranslation;
-
 
 class SliderController extends Controller
 {
@@ -24,8 +22,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $locale = Session::get('locale');
-        $data = SliderTranslation::where('locale', $locale)->orderBy('id', 'DESC')->get();
+        $data = Slider::orderBy('id', 'DESC')->get();
         return view('admin.slider.index', compact('data'));
     }
 
@@ -50,6 +47,8 @@ class SliderController extends Controller
         $data = $request->all();
         $slider = new Slider();
         $slider->user_id = Auth::User()->id;
+        $slider->name = $data['name'];
+        $slider->content = $data['content'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {
@@ -60,30 +59,6 @@ class SliderController extends Controller
             $slider->img = $filename;
         }
         // thêm ảnh
-
-        $slider->fill([
-          'en' => [
-            'heading1' => $data['heading1:en'],
-            'heading2' => $data['heading2:en'],
-            'text1' => $data['text1:en'],
-            'text2' => $data['text2:en'],
-            'link' => $data['link:en'],
-          ],
-          'vi' => [
-            'heading1' => $data['heading1:vi'],
-            'heading2' => $data['heading2:vi'],
-            'text1' => $data['text1:vi'],
-            'text2' => $data['text2:vi'],
-            'link' => $data['link:vi'],   
-          ],
-          'cn' => [
-            'heading1' => $data['heading1:cn'],
-            'heading2' => $data['heading2:cn'],
-            'text1' => $data['text1:cn'],
-            'text2' => $data['text2:cn'],
-            'link' => $data['link:cn'],   
-          ]
-        ]);
 
         $slider->save();
         return redirect('admin/slider')->with('Success','Success');
@@ -108,10 +83,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $locale = Session::get('locale');
         $data = Slider::find($id);
-        // $SliderTranslation = SliderTranslation::where('locale', $locale)->orderBy('category_id', 'DESC')->get();
-        return view('admin.slider.edit')->with(compact('data', 'locale'));
+        return view('admin.slider.edit')->with(compact('data'));
     }
 
     /**
@@ -124,44 +97,21 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-
-        $Slider = Slider::find($id);
+        $slider = Slider::find($id);
+        $slider->name = $data['name'];
+        $slider->content = $data['content'];
         
-        $Slider->fill([
-          'en' => [
-            'heading1' => $data['heading1:en'],
-            'heading2' => $data['heading2:en'],
-            'text1' => $data['text1:en'],
-            'text2' => $data['text2:en'],
-            'link' => $data['link:en'],
-          ],
-          'vi' => [
-            'heading1' => $data['heading1:vi'],
-            'heading2' => $data['heading2:vi'],
-            'text1' => $data['text1:vi'],
-            'text2' => $data['text2:vi'],
-            'link' => $data['link:vi'],   
-          ],
-          'cn' => [
-            'heading1' => $data['heading1:cn'],
-            'heading2' => $data['heading2:cn'],
-            'text1' => $data['text1:cn'],
-            'text2' => $data['text2:cn'],
-            'link' => $data['link:cn'],   
-          ]
-        ]);
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/home/'.$Slider->img)) { File::delete('data/home/'.$Slider->img);} // xóa ảnh cũ
+            if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/'.$slider->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
             $file->move('data/home', $filename);
-            $Slider->img = $filename;
+            $slider->img = $filename;
         }
         // thêm ảnh
-        $Slider->save();
-        
+        $slider->save();
         return redirect()->back()->with('Success','Success');
     }
 
@@ -173,13 +123,9 @@ class SliderController extends Controller
      */
     public function destroy($id)
     {
-        $SliderTranslation = SliderTranslation::where('Slider_id', $id)->get();
-        foreach ($SliderTranslation as $key => $value) {
-            SliderTranslation::find($value->id)->delete();
-        }
-        $Slider = Slider::find($id);
-        if(File::exists('data/home/'.$Slider->img)) { File::delete('data/home/'.$Slider->img);} // xóa ảnh cũ
-        $Slider->delete();
+        $slider = Slider::find($id);
+        if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/'.$slider->img);} // xóa ảnh cũ
+        $slider->delete();
         return redirect()->back()->with('Success','Success');
     }
 }
