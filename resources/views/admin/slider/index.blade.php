@@ -32,7 +32,7 @@
                         <tbody>
                             @foreach($data as $val)
                             <tr>
-                                <td class="thumb"><img src="data/home/{{$val->img}}"></td>
+                                <td class="thumb"><a href="{{route('slider.edit',[$val->id])}}" class="mr-2"><img src="data/home/{{$val->img}}"></a></td>
                                 <td>
                                     <div><a href="{{route('slider.edit',[$val->id])}}" class="mr-2">{{$val->name}}</a></div>
                                     <div>{{$val->content}}</div>

@@ -6,12 +6,14 @@
 @section('url'){{asset('')}}@endsection
 
 @section('content')
+
 <div class="full-row p-0 overflow-hidden bg-light">
     <div class="owl-carousel owl-theme home_slider">
-        <div class="item"><img alt="slide" src="https://datxanhindochine.com/data/home/z4537714783472_5c013a91df8d09e821e0f37d8c9e9f4f.jpg"></div>
+        @foreach($slider as $val)
+        <div class="item"><img alt="slide" src="data/home/{{$val->img}}"></div>
+        @endforeach
     </div>
 </div>
-
 
 
 

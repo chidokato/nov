@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Setting;
+use App\Models\Slider;
 
 // $locale = App::currentLocale();
 
@@ -27,12 +28,14 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('pages.home');
+        $slider = Slider::get();
+        return view('pages.home', compact(
+            'slider',
+        ));
     }
 
     public function about()
     {
-        $locale = App::currentLocale();
         $category = CategoryTranslation::join('categories', 'categories.id', '=', 'category_translations.category_id')
             ->where('locale', $locale)->where('parent', 0)
             ->select('category_translations.*')->orderBy('categories.view', 'asc')->get();

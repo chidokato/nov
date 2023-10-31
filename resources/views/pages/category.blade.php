@@ -7,7 +7,6 @@
 
 @section('content')
 <div id="page_wrapper" class="bg-light">
-@include('layout.header_page')
 
 <div class="full-row py-4" style="margin-top: 70px;">
     <div class="container">
