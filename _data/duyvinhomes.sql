@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th10 28, 2023 lúc 07:55 AM
--- Phiên bản máy phục vụ: 10.5.19-MariaDB-cll-lve
--- Phiên bản PHP: 7.2.34
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 03, 2023 lúc 11:19 AM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `u641980477_doisong`
+-- Cơ sở dữ liệu: `duyvinhomes`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,6 @@ CREATE TABLE `categories` (
   `user_id` int(11) DEFAULT NULL,
   `name` varchar(120) DEFAULT NULL,
   `content` text DEFAULT NULL,
-  `category_id` int(11) DEFAULT NULL,
   `parent` int(11) DEFAULT NULL,
   `title` varchar(120) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
@@ -49,14 +48,16 @@ CREATE TABLE `categories` (
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`id`, `user_id`, `name`, `content`, `category_id`, `parent`, `title`, `description`, `status`, `sort_by`, `view`, `icon`, `slug`, `created_at`, `updated_at`) VALUES
-(56, 1, 'Ẩm thực', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'am-thuc', '2023-06-02 20:15:47', '2023-06-02 20:15:47'),
-(57, 1, 'Làm đẹp', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'lam-dep', '2023-06-02 20:16:07', '2023-06-02 20:16:07'),
-(58, 1, 'Phong thủy', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'phong-thuy', '2023-06-02 20:17:38', '2023-06-02 20:17:38'),
-(59, 1, 'Du lịch', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'du-lich', '2023-06-02 20:19:36', '2023-06-02 20:19:36'),
-(60, 1, 'Công nghệ', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'cong-nghe', '2023-06-02 20:20:46', '2023-06-02 20:20:46'),
-(61, 1, 'Mua sắm', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'mua-sam', '2023-06-02 20:20:57', '2023-06-02 20:20:57'),
-(62, 1, 'Mẹo vặt gia đình', NULL, NULL, 0, NULL, NULL, 'true', 'News', NULL, NULL, 'meo-vat-gia-dinh', '2023-06-02 20:21:06', '2023-06-02 20:21:06');
+INSERT INTO `categories` (`id`, `user_id`, `name`, `content`, `parent`, `title`, `description`, `status`, `sort_by`, `view`, `icon`, `slug`, `created_at`, `updated_at`) VALUES
+(63, 1, 'Giới thiệu', NULL, 0, NULL, NULL, 'true', 'News', 1, NULL, 'gioi-thieu', '2023-10-29 21:12:44', '2023-11-03 01:40:37'),
+(64, 1, 'Sản phẩm', NULL, 0, NULL, NULL, 'true', 'News', 2, NULL, 'san-pham', '2023-10-29 21:12:52', '2023-10-29 21:19:15'),
+(65, 1, 'Cảnh quan', NULL, 0, NULL, NULL, 'true', 'News', 3, NULL, 'canh-quan', '2023-10-29 21:13:01', '2023-10-29 21:19:16'),
+(66, 1, 'Tiện ích - dịch vụ', NULL, 0, NULL, NULL, 'true', 'News', 4, NULL, 'tien-ich-dich-vu', '2023-10-29 21:13:16', '2023-10-29 21:19:17'),
+(67, 1, 'Đài hóa thân', NULL, 0, NULL, NULL, 'true', 'News', 5, NULL, 'dai-hoa-than', '2023-10-29 21:13:29', '2023-10-29 21:19:17'),
+(68, 1, 'Tin tức', NULL, 0, NULL, NULL, 'true', 'News', 6, NULL, 'tin-tuc', '2023-10-29 21:13:39', '2023-10-29 21:19:18'),
+(69, 1, 'Liên hệ', NULL, 0, NULL, NULL, 'true', 'News', 7, NULL, 'lien-he', '2023-10-29 21:13:59', '2023-10-29 21:19:18'),
+(70, 1, 'Dịch vụ', NULL, 66, NULL, NULL, 'true', 'News', 2, NULL, 'dich-vu', '2023-10-29 21:19:00', '2023-10-29 21:20:06'),
+(71, 1, 'Tiện ích', NULL, 66, NULL, NULL, 'true', 'News', 1, NULL, 'tien-ich', '2023-10-29 21:19:09', '2023-10-29 21:20:04');
 
 -- --------------------------------------------------------
 
@@ -540,6 +541,39 @@ INSERT INTO `images` (`id`, `post_id`, `section_id`, `name`, `img`, `note`, `con
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `menus`
+--
+
+CREATE TABLE `menus` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `view` int(11) DEFAULT NULL,
+  `parent` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `menus`
+--
+
+INSERT INTO `menus` (`id`, `user_id`, `name`, `slug`, `view`, `parent`, `created_at`, `updated_at`) VALUES
+(10, 1, 'Giới thiệu', 'gioi-thieu', NULL, 0, '2023-11-03 09:04:46', '2023-11-03 09:04:46'),
+(11, 1, 'Sản phẩm', 'san-pham', NULL, 0, '2023-11-03 09:04:53', '2023-11-03 09:04:53'),
+(12, 1, 'Cảnh quan', 'canh-quan', NULL, 0, '2023-11-03 09:05:00', '2023-11-03 09:05:00'),
+(13, 1, 'Tiện ích - dịch vụ', 'tien-ich-dich-vu', NULL, 0, '2023-11-03 09:05:05', '2023-11-03 09:05:05'),
+(14, 1, 'Tiện ích', 'tien-ich', NULL, 13, '2023-11-03 09:05:14', '2023-11-03 09:05:14'),
+(15, 1, 'Dịch vụ', 'dich-vu', NULL, 13, '2023-11-03 09:05:21', '2023-11-03 09:05:21'),
+(16, 1, 'Đài hóa thân', 'dai-hoa-than', NULL, 0, '2023-11-03 09:05:28', '2023-11-03 09:05:28'),
+(17, 1, 'Tin tức', 'tin-tuc', NULL, 0, '2023-11-03 09:05:35', '2023-11-03 09:05:35'),
+(18, 1, 'Liên hệ', 'lien-he', NULL, 0, '2023-11-03 09:05:43', '2023-11-03 09:05:43'),
+(19, 1, 'Tổng quan dự án', 'tong-quan-du-an', NULL, 10, '2023-11-03 09:09:14', '2023-11-03 09:09:14');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `migrations`
 --
 
@@ -619,8 +653,7 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `category_id`, `name`, `detail`, `content`, `status`, `sort_by`, `slug`, `img`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(129, 1, 56, 'Tổng hợp các cách kho thịt lơn ngon nhất', 'Khi nhắc đến ẩm thực Việt Nam, một hình ảnh không thể thiếu trong bữa cơm gia đình chính là món thịt lợn kho. Với hương vị đậm đà, thịt mềm mịn và nước dùng thấm đều vào từng sợi thịt, kho thịt lợn đã trở', '<p>Khi nhắc đến ẩm thực Việt Nam, một h&igrave;nh ảnh kh&ocirc;ng thể thiếu trong bữa cơm gia đ&igrave;nh ch&iacute;nh l&agrave; m&oacute;n thịt lợn kho. Với hương vị đậm đ&agrave;, thịt mềm mịn v&agrave; nước d&ugrave;ng thấm đều v&agrave;o từng sợi thịt, kho thịt lợn đ&atilde; trở th&agrave;nh một biểu tượng ẩm thực đặc trưng, mang trong m&igrave;nh hương vị truyền thống v&agrave; sự ấm &aacute;p của qu&ecirc; hương. Trong b&agrave;i viết n&agrave;y, ch&uacute;ng ta sẽ kh&aacute;m ph&aacute; những c&aacute;ch kho thịt lợn ngon tuyệt, từ những c&ocirc;ng thức truyền thống đến những biến tấu s&aacute;ng tạo, gi&uacute;p bạn tạo ra những m&oacute;n ăn thịnh soạn v&agrave; đậm chất Việt Nam. H&atilde;y c&ugrave;ng nhau kh&aacute;m ph&aacute; những b&iacute; quyết v&agrave; bước nấu nướng để tận hưởng một m&oacute;n kho thịt lợn độc đ&aacute;o v&agrave; th&uacute; vị</p>\r\n\r\n<p><em>Dưới đ&acirc;y l&agrave; một số chi tiết hơn về c&aacute;c c&aacute;ch kho thịt lợn phổ biến:</em></p>\r\n\r\n<p><strong>Kho thịt lợn truyền thống:</strong></p>\r\n\r\n<ul>\r\n	<li>Chuẩn bị: Thịt lợn cắt th&agrave;nh miếng vừa, h&agrave;nh, tỏi, gừng băm nhỏ, nước mắm, muối, đường, ti&ecirc;u, x&igrave; dầu.</li>\r\n	<li>Thực hiện: Phi h&agrave;nh, tỏi, gừng trong một ch&uacute;t x&igrave; dầu cho thơm. Tiếp theo, cho thịt lợn v&agrave;o nồi v&agrave; đảo đều với h&agrave;nh, tỏi, gừng đ&atilde; phi. Sau đ&oacute;, th&ecirc;m nước mắm, muối, đường, ti&ecirc;u v&agrave; khoảng 1-2 ch&eacute;n nước. Đậy nắp nồi, đun lửa nhỏ v&agrave; ninh khoảng 1-2 giờ cho thịt mềm v&agrave; nước d&ugrave;ng đậm đ&agrave;.</li>\r\n</ul>\r\n\r\n<p><strong>Kho thịt lợn với mắm t&ocirc;m:</strong></p>\r\n\r\n<ul>\r\n	<li>Chuẩn bị: Thịt lợn cắt miếng vừa, mắm t&ocirc;m, h&agrave;nh, tỏi băm nhỏ, đường, muối, ti&ecirc;u, nước mắm.</li>\r\n	<li>Thực hiện: Phi h&agrave;nh, tỏi trong dầu n&oacute;ng cho thơm. Tiếp theo, cho thịt lợn v&agrave;o nồi v&agrave; đảo đều với h&agrave;nh, tỏi đ&atilde; phi. Sau đ&oacute;, th&ecirc;m mắm t&ocirc;m, gia vị như đường, muối, ti&ecirc;u v&agrave; một &iacute;t nước mắm. Kho thịt trong khoảng 1-2 giờ cho thịt mềm v&agrave; gia vị thấm đều.</li>\r\n</ul>\r\n\r\n<p><strong>Kho thịt lợn caramen:</strong></p>\r\n\r\n<ul>\r\n	<li>Chuẩn bị: Thịt lợn cắt th&agrave;nh miếng vừa, đường caramen, h&agrave;nh, tỏi băm nhỏ, nước mắm, muối, ti&ecirc;u, dầu ăn.</li>\r\n	<li>Thực hiện: Phi h&agrave;nh, tỏi trong dầu n&oacute;ng cho thơm. Tiếp theo, cho thịt lợn v&agrave;o nồi v&agrave; đảo đều với h&agrave;nh, tỏi đ&atilde; phi. Sau đ&oacute;, th&ecirc;m đường caramen, gia vị như nước mắm, muối, ti&ecirc;u v&agrave; một &iacute;t nước. Kho thịt trong khoảng 1-2 giờ cho thịt mềm v&agrave; nước sốt đậm đ&agrave; từ đường caramen.</li>\r\n</ul>\r\n\r\n<p><strong>Kho thịt lợn h&agrave;nh l&aacute;:</strong></p>\r\n\r\n<ul>\r\n	<li>Chuẩn bị: Thịt lợn cắt th&agrave;nh miếng vừa, h&agrave;nh l&aacute; cắt kh&uacute;c, h&agrave;nh, tỏi băm nhỏ, nước mắm, muối, đường, ti&ecirc;u, dầu ăn.</li>\r\n	<li>Thực hiện: Phi h&agrave;nh, tỏi trong dầu n&oacute;ng cho thơm. Tiếp theo, cho thịt lợn v&agrave;o nồi v&agrave; đảo đều với h&agrave;nh, tỏi đ&atilde; phi. Sau đ&oacute;, th&ecirc;m h&agrave;nh l&aacute;, gia vị như nước mắm, muối, đường, ti&ecirc;u v&agrave; một &iacute;t nước. Kho thịt trong khoảng 1-2 giờ cho thịt mềm v&agrave; h&agrave;nh l&aacute; thơm.</li>\r\n</ul>\r\n\r\n<p><strong>Kho thịt lợn nước dừa:</strong></p>\r\n\r\n<ul>\r\n	<li>Chuẩn bị: Thịt lợn cắt th&agrave;nh miếng vừa, nước dừa tươi, h&agrave;nh, tỏi băm nhỏ, gia vị như muối, đường, ti&ecirc;u.</li>\r\n	<li>Thực hiện: Phi h&agrave;nh, tỏi trong dầu n&oacute;ng cho thơm. Tiếp theo, cho thịt lợn v&agrave;o nồi v&agrave; đảo đều với h&agrave;nh, tỏi đ&atilde; phi. Sau đ&oacute;, th&ecirc;m nước dừa v&agrave; gia vị như muối, đường, ti&ecirc;u. Kho thịt trong khoảng 1-2 giờ cho thịt mềm v&agrave; nước dừa s&aacute;nh.</li>\r\n</ul>\r\n\r\n<p><em>Nhớ lưu &yacute; thời gian nấu nước d&ugrave;ng v&agrave; lửa khi kho thịt lợn để đảm bảo thịt ch&iacute;n mềm v&agrave; nước d&ugrave;ng đậm đ&agrave;. C&aacute;ch nấu c&oacute; thể được điều chỉnh theo khẩu vị c&aacute; nh&acirc;n v&agrave; th&ecirc;m c&aacute;c gia vị kh&aacute;c để tạo ra những m&oacute;n kho thịt lợn đặc biệt.</em></p>', 'true', 'News', 'tong-hop-cac-cach-kho-thit-lon-ngon-nhat', 'Thitkhotieu-1200x676.jpg', 'Hương Vị Đậm Đà Của Các Cách Kho Thịt Lợn: Hướng Dẫn Chi Tiết và Công Thức', 'Hương Vị Đậm Đà Của Các Cách Kho Thịt Lợn: Hướng Dẫn Chi Tiết và Công Thức', '2023-06-05 07:36:25', '2023-06-05 13:58:07'),
-(130, 1, 56, 'Hướng dẫn làm những món ăn bún ngon tại nhà', 'Bún là một loại mì truyền thống trong ẩm thực Việt Nam, có rất nhiều món ăn độc đáo và hấp dẫn được chế biến từ bún. Dưới đây là hướng', '<p>B&uacute;n l&agrave; một loại m&igrave; truyền thống trong ẩm thực Việt Nam, c&oacute; rất nhiều m&oacute;n ăn độc đ&aacute;o v&agrave; hấp dẫn được chế biến từ b&uacute;n. Dưới đ&acirc;y l&agrave; hướng dẫn c&aacute;ch l&agrave;m những m&oacute;n ăn b&uacute;n ngon v&agrave; dễ d&agrave;ng tại nh&agrave;. H&atilde;y c&ugrave;ng kh&aacute;m ph&aacute; v&agrave; thử l&agrave;m những m&oacute;n ăn n&agrave;y để thưởng thức c&ugrave;ng gia đ&igrave;nh v&agrave; bạn b&egrave;</p>\r\n\r\n<p><strong>B&uacute;n chả:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>Nguy&ecirc;n liệu:</p>\r\n\r\n	<ul>\r\n		<li>300g thịt lợn thăn mỡ</li>\r\n		<li>300g thịt lợn vai</li>\r\n		<li>200g b&uacute;n tươi</li>\r\n		<li>Rau sống (rau sống, rau thơm)</li>\r\n		<li>2-3 quả chanh</li>\r\n		<li>2-3 muỗng canh nước mắm</li>\r\n		<li>2-3 muỗng canh đường</li>\r\n		<li>2-3 muỗng canh mắm t&ocirc;m</li>\r\n		<li>H&agrave;nh, tỏi, ớt</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p>C&aacute;ch l&agrave;m:</p>\r\n\r\n	<ol>\r\n		<li>Th&aacute;i thịt lợn th&agrave;nh từng miếng vừa. Rưới nước mắm, đường v&agrave; mắm t&ocirc;m l&ecirc;n thịt, trộn đều v&agrave; ướp thịt trong &iacute;t nhất 30 ph&uacute;t.</li>\r\n		<li>Nướng thịt tr&ecirc;n bếp than hoặc trong l&ograve; nướng cho đến khi thịt ch&iacute;n v&agrave; c&oacute; m&agrave;u v&agrave;ng đẹp.</li>\r\n		<li>Chuẩn bị nước mắm chua ngọt bằng c&aacute;ch pha nước mắm, đường, nước chanh v&agrave; nước ấm với tỷ lệ th&iacute;ch hợp.</li>\r\n		<li>Đun s&ocirc;i nước lẩu v&agrave; cho b&uacute;n v&agrave;o nấu ch&iacute;n. Sau đ&oacute;, gắp b&uacute;n ra, rửa qua nước lạnh v&agrave; để r&aacute;o.</li>\r\n		<li>Chuẩn bị đĩa b&uacute;n tươi, rau sống v&agrave; h&agrave;nh, tỏi, ớt đ&atilde; th&aacute;i nhỏ. Tr&igrave;nh b&agrave;y thịt nướng l&ecirc;n đĩa v&agrave; trang tr&iacute; với h&agrave;nh, tỏi, ớt.</li>\r\n		<li>Khi ăn, lấy từng mẩu b&uacute;n, rau sống v&agrave; thịt nướng ng&acirc;m v&agrave;o nước mắm chua ngọt trước khi thưởng thức.</li>\r\n	</ol>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>2. B&uacute;n ri&ecirc;u cua:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>Nguy&ecirc;n liệu:</p>\r\n\r\n	<ul>\r\n		<li>200g cua đồng</li>\r\n		<li>200g thịt băm</li>\r\n		<li>2 quả c&agrave; chua</li>\r\n		<li>1 b&oacute; rau đay</li>\r\n		<li>1 củ h&agrave;nh t&iacute;m</li>\r\n		<li>1 củ h&agrave;nh trắng</li>\r\n		<li>1 quả trứng</li>\r\n		<li>B&uacute;n tươi</li>\r\n		<li>Mắm t&ocirc;m, nước mắm, đường, dầu h&agrave;o, ti&ecirc;u, h&agrave;nh, tỏi</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p>C&aacute;ch l&agrave;m:</p>\r\n\r\n	<ol>\r\n		<li>T&aacute;ch thịt cua ra v&agrave; nghiền nhuyễn. Kết hợp thịt băm với thịt cua nghiền, trộn đều.</li>\r\n		<li>X&agrave;o h&agrave;nh t&iacute;m v&agrave; h&agrave;nh trắng với &iacute;t dầu ăn, sau đ&oacute; th&ecirc;m c&agrave; chua xay nhuyễn v&agrave;o x&agrave;o th&ecirc;m.</li>\r\n		<li>Đun s&ocirc;i nước d&ugrave;ng từ xương heo, sau đ&oacute; th&ecirc;m c&agrave; chua đ&atilde; x&agrave;o v&agrave;o. N&ecirc;m nếm với mắm t&ocirc;m, nước mắm, đường, dầu h&agrave;o, ti&ecirc;u, h&agrave;nh, tỏi theo khẩu vị.</li>\r\n		<li>Khi nước d&ugrave;ng đ&atilde; s&ocirc;i, h&ograve;a đều trứng v&agrave; thịt cua v&agrave;o nước d&ugrave;ng, khuấy đều để h&igrave;nh th&agrave;nh th&agrave;nh phẩm ri&ecirc;u cua.</li>\r\n		<li>Luộc b&uacute;n tươi v&agrave; rửa qua nước lạnh. Chuẩn bị rau đay, h&agrave;nh t&iacute;m, h&agrave;nh l&aacute; v&agrave; tỏi phi.</li>\r\n		<li>Tr&igrave;nh b&agrave;y b&uacute;n, rau sống, h&agrave;nh, tỏi phi v&agrave; ri&ecirc;u cua trong t&ocirc;. Khi ăn, trộn đều c&aacute;c th&agrave;nh phần v&agrave; thưởng thức.</li>\r\n	</ol>\r\n	</li>\r\n</ul>\r\n\r\n<p><strong>3. B&uacute;n thịt nướng:</strong></p>\r\n\r\n<ul>\r\n	<li>\r\n	<p>Nguy&ecirc;n liệu:</p>\r\n\r\n	<ul>\r\n		<li>300g thịt heo hoặc thịt g&agrave;</li>\r\n		<li>200g b&uacute;n tươi</li>\r\n		<li>Rau sống (rau sống, dưa leo)</li>\r\n		<li>2-3 quả chanh</li>\r\n		<li>2-3 muỗng canh nước mắm</li>\r\n		<li>2-3 muỗng canh đường</li>\r\n		<li>2-3 muỗng canh mắm t&ocirc;m</li>\r\n		<li>H&agrave;nh, tỏi, ớt</li>\r\n	</ul>\r\n	</li>\r\n	<li>\r\n	<p>C&aacute;ch l&agrave;m:</p>\r\n\r\n	<ol>\r\n		<li>Th&aacute;i thịt th&agrave;nh từng miếng vừa. Rưới nước mắm, đường v&agrave; mắm t&ocirc;m l&ecirc;n thịt, trộn đều v&agrave; ướp thịt trong &iacute;t nhất 30 ph&uacute;t.</li>\r\n		<li>Nướng thịt tr&ecirc;n bếp than hoặc trong l&ograve; nướng cho đến khi thịt ch&iacute;n v&agrave; c&oacute; m&agrave;u v&agrave;ng đẹp.</li>\r\n		<li>Chuẩn bị nước mắm chua ngọt bằng c&aacute;ch pha nước mắm, đường, nước chanh v&agrave; nước ấm với tỷ lệ th&iacute;ch hợp.</li>\r\n		<li>Đun s&ocirc;i nước lẩu v&agrave; cho b&uacute;n v&agrave;o nấu ch&iacute;n. Sau đ&oacute;, gắp b&uacute;n ra, rửa qua nước lạnh v&agrave; để r&aacute;o.</li>\r\n		<li>Chuẩn bị đĩa b&uacute;n tươi, rau sống v&agrave; h&agrave;nh, tỏi, ớt đ&atilde; th&aacute;i nhỏ. Tr&igrave;nh b&agrave;y thịt nướng l&ecirc;n đĩa v&agrave; trang tr&iacute; với h&agrave;nh, tỏi, ớt.</li>\r\n		<li>Khi ăn, lấy từng mẩu b&uacute;n, rau sống v&agrave; thịt nướng ng&acirc;m v&agrave;o nước mắm chua ngọt trước khi thưởng thức.</li>\r\n	</ol>\r\n	</li>\r\n</ul>\r\n\r\n<p>C&aacute;c m&oacute;n ăn b&uacute;n tr&ecirc;n đều c&oacute; hương vị đặc trưng v&agrave; thường được ăn k&egrave;m với rau sống v&agrave; nước mắm chua ngọt. Bạn c&oacute; thể t&ugrave;y chỉnh c&aacute;c nguy&ecirc;n liệu v&agrave; gia vị theo khẩu vị ri&ecirc;ng để tạo ra những m&oacute;n b&uacute;n thơm ngon v&agrave; độc đ&aacute;o. Ch&uacute;c bạn th&agrave;nh c&ocirc;ng v&agrave; thưởng thức những m&oacute;n ăn tuyệt vời n&agrave;y c&ugrave;ng gia đ&igrave;nh v&agrave; bạn b&egrave;!</p>', 'true', 'News', 'huong-dan-lam-nhung-mon-an-bun-ngon-tai-nha', NULL, NULL, NULL, '2023-06-05 14:16:05', '2023-06-05 14:16:05');
+(131, 1, 63, 'Tổng quan dự án', NULL, '<h2>C&ocirc;ng vi&ecirc;n Nghĩa trang Thi&ecirc;n Đường</h2>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mỗi đất nước đều mang một sắc th&aacute;i văn h&oacute;a, phong tục tập qu&aacute;n ri&ecirc;ng biệt, nhưng tất cả mọi người sinh ra tr&ecirc;n thế gian n&agrave;y lại c&oacute; c&ugrave;ng điểm giống nhau đ&oacute; l&agrave; tinh thần Hiếu đạo. Chữ Hiếu từ xưa cho đến nay mang gi&aacute; trị vượt khỏi phạm tr&ugrave; kh&ocirc;ng gian v&agrave; thời gian m&agrave; ng&ocirc;n ngữ kh&oacute; diễn tả hết về gi&aacute; trị cao đẹp đ&oacute;. Hiếu đạo ch&iacute;nh l&agrave; bức th&ocirc;ng điệp gửi đến những người con h&atilde;y hướng về đấng sinh th&agrave;nh để niệm &acirc;n gi&aacute;o dưỡng thi&ecirc;ng li&ecirc;ng của cha v&agrave; mẹ. Theo Phật gi&aacute;o, con người kh&ocirc;ng chỉ c&oacute; kiếp sống hiện tại m&agrave; c&ograve;n c&oacute; kiếp sống vị lai, do đ&oacute; người con hiếu thảo cần phải chăm lo cho cha mẹ cả đời sống sau khi từ gi&atilde; c&otilde;i đời n&agrave;y. Người Phật tử hiếu đạo lu&ocirc;n ưu tư: Sau khi chết, cha mẹ sẽ đi về đ&acirc;u? L&agrave;m sao để gi&uacute;p cha mẹ c&oacute; được niềm an lạc hạnh ph&uacute;c trong đời sống hiện tại v&agrave; đời sống sau khi chết? &nbsp;</p>\r\n\r\n<p>Những trăn trở, ưu tư n&agrave;y ch&iacute;nh l&agrave; nguồn th&ocirc;i th&uacute;c Chủ đầu tư phải t&igrave;m kiếm được lời giải đ&aacute;p, v&agrave; Dự &aacute;n&nbsp;C&ocirc;ng vi&ecirc;n Nghĩa trang Thi&ecirc;n Đường&nbsp;ra đời ch&iacute;nh l&agrave; c&acirc;u trả lời về một thế giới vĩnh hằng d&agrave;nh cho người đ&atilde; khuất, l&agrave; nơi t&ocirc;n vinh những gi&aacute; trị tốt đẹp của t&igrave;nh cảm gia đ&igrave;nh, nơi con ch&aacute;u tỏ l&ograve;ng biết ơn với tổ ti&ecirc;n, g&oacute;p phần x&acirc;y dựng những gi&aacute; trị đời sống tinh thần cho c&aacute;c thế hệ sau.</p>\r\n\r\n<p>C&ocirc;ng vi&ecirc;n Thi&ecirc;n Đường l&agrave; c&ocirc;ng vi&ecirc;n nghĩa trang được x&acirc;y dựng theo m&ocirc; h&igrave;nh c&ocirc;ng vi&ecirc;n t&acirc;m linh &ndash; sinh th&aacute;i tại x&atilde; Lang Qu&aacute;n, huyện Y&ecirc;n Sơn, tỉnh Tuy&ecirc;n Quang. C&ocirc;ng vi&ecirc;n c&oacute; địa thế phong thủy vượng sơn vượng hướng, ph&iacute;a sau l&agrave; n&uacute;i L&agrave; vững ch&atilde;i, dưới ch&acirc;n l&agrave; d&ograve;ng suối ngọc tự nhi&ecirc;n bao quanh, mang theo linh kh&iacute; đất trời về với Thi&ecirc;n Đường tạo n&ecirc;n hai hồ lớn. Thi&ecirc;n Đường tọa lạc ngay s&aacute;t cạnh trục đường quốc lộ v&agrave; trục đường cao tốc nối Tuy&ecirc;n Quang v&agrave; c&aacute;c tỉnh miền n&uacute;i ph&iacute;a Bắc. Qu&yacute; kh&aacute;ch c&oacute; thể dễ d&agrave;ng di chuyển đến Thi&ecirc;n Đường chỉ với hơn 75 ph&uacute;t từ H&agrave; Nội, 45 ph&uacute;t từ H&agrave; Giang, 35 ph&uacute;t từ Y&ecirc;n B&aacute;i v&agrave; 10 ph&uacute;t từ th&agrave;nh phố Tuy&ecirc;n Quang.</p>\r\n\r\n<p>Ngo&agrave;i ra, C&ocirc;ng vi&ecirc;n Nghĩa trang Thi&ecirc;n Đường c&ograve;n c&oacute; hệ thống tiện &iacute;ch to&agrave;n diện, từ c&aacute;c tiện &iacute;ch t&acirc;m linh đặc sắc như đền Tr&igrave;nh, ch&ugrave;a B&aacute;o &Acirc;n, quần thể tượng Phật, Trục Thần Đạo, đến những tiện &iacute;ch phụ trợ đa dạng như nh&agrave; hỏa t&aacute;ng ứng dụng c&ocirc;ng nghệ Ch&acirc;u &Acirc;u, c&aacute;c dịch vụ trọn g&oacute;i được c&aacute; nh&acirc;n h&oacute;a v&agrave; cung cấp theo nhu cầu của mỗi gia đ&igrave;nh. Bằng lễ nghĩa v&agrave; sự tận t&acirc;m phục vụ, Thi&ecirc;n Đường mong muốn mang đến sự an lạc vĩnh hằng v&agrave; sự an t&acirc;m, trọn vẹn đạo hiếu của con ch&aacute;u đối với c&aacute;c đấng sinh th&agrave;nh, để mỗi lần đến Thi&ecirc;n Đường, qu&yacute; kh&aacute;ch cảm nhận được sự b&igrave;nh y&ecirc;n, thanh thản trong t&acirc;m hồn.</p>\r\n\r\n<h2>C&Ocirc;NG VI&Ecirc;N NGHĨA TRANG THI&Ecirc;N ĐƯỜNG</h2>\r\n\r\n<ul>\r\n	<li>Vị tr&iacute;: X&atilde; Lang Qu&aacute;n, huyện Y&ecirc;n Sơn, tỉnh Tuy&ecirc;n Quang</li>\r\n	<li>Quy m&ocirc; dự &aacute;n:&nbsp;25 (h&eacute;c-ta)</li>\r\n	<li>Diện t&iacute;ch: Cảnh quan c&acirc;y xanh chiếm 65%, hạ tầng kỹ thuật v&agrave; c&aacute;c dịch vụ tiện &iacute;ch</li>\r\n	<li>chiếm 28%, diện t&iacute;ch x&acirc;y dựng c&aacute;t t&aacute;ng (kh&ocirc;ng hung t&aacute;ng) chỉ chiếm 7%.</li>\r\n	<li>Chủ đầu tư: C&ocirc;ng ty Cổ phần Đầu tư X&acirc;y dựng v&agrave; Thương mại An Ph&aacute;t Vinh</li>\r\n</ul>', 'true', 'News', 'tong-quan-du-an', 'z4739939583777_ed37970f5389ec145ff423bd67dab831.jpg', NULL, NULL, '2023-10-29 21:21:11', '2023-10-29 21:23:29');
 
 -- --------------------------------------------------------
 
@@ -631,15 +664,54 @@ INSERT INTO `posts` (`id`, `user_id`, `category_id`, `name`, `detail`, `content`
 CREATE TABLE `settings` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `status` varchar(10) DEFAULT NULL
+  `name` varchar(100) DEFAULT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `title` varchar(150) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `footer` text DEFAULT NULL,
+  `header` text DEFAULT NULL,
+  `hotline` varchar(15) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `facebook` varchar(100) DEFAULT NULL,
+  `youtube` varchar(100) DEFAULT NULL,
+  `maps` text DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
+  `favicon` varchar(100) DEFAULT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `settings`
 --
 
-INSERT INTO `settings` (`id`, `user_id`, `status`) VALUES
-(1, 1, NULL);
+INSERT INTO `settings` (`id`, `user_id`, `name`, `address`, `title`, `description`, `footer`, `header`, `hotline`, `email`, `facebook`, `youtube`, `maps`, `img`, `favicon`, `status`, `created_at`, `updated_at`) VALUES
+(1, 1, 'ádasd ádasd', 'ádasd', 'ád', 'ád', 'ád', NULL, 'á', 'ádas', 'đá', 'ádasd', 'ádsad', '14_Rectangle 180_3.png', '20230620215825-efe6_wm.jpg', NULL, NULL, '2023-11-02 08:32:44');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `user_id`, `name`, `img`, `content`, `created_at`, `updated_at`) VALUES
+(1, 1, 'sádasd adasdasd', 'z4791019540007_87950f4c9dd715651073aa798efa82b9.jpg', 'ádasdasd', '2023-10-30 07:25:36', '2023-10-31 03:32:45'),
+(2, 1, 'áda', 'z4790439343228_7e3ce4843b4a1bf7683f38ea93f0a167.jpg', 'sdasdasdasd', '2023-10-30 07:37:45', '2023-10-31 03:32:36');
 
 -- --------------------------------------------------------
 
@@ -649,8 +721,12 @@ INSERT INTO `settings` (`id`, `user_id`, `status`) VALUES
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `yourname` varchar(100) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `facebook` varchar(255) DEFAULT NULL,
   `permission` int(11) DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
@@ -663,8 +739,9 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `permission`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'tuan.pn92@gmail.com', 1, NULL, '$2y$10$9fz78ri8PAvBIbSerrENiuTjo5WlAXRXdfCtkh.40ByOcTeSNYCsO', NULL, '2023-03-20 09:17:19', '2023-03-20 09:17:19');
+INSERT INTO `users` (`id`, `name`, `yourname`, `email`, `address`, `phone`, `facebook`, `permission`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'Nguyễn Văn Tuấn', 'tuan.pn92@gmail.com', 'Hà Nội', '0977572947', NULL, 1, NULL, '$2y$10$9fz78ri8PAvBIbSerrENiuTjo5WlAXRXdfCtkh.40ByOcTeSNYCsO', NULL, '2023-03-20 09:17:19', '2023-10-27 00:23:31'),
+(2, 'admin', 'Admin', 'admin@gmail.com', 'Hà Nội', '0987654321', NULL, 1, NULL, '$2y$10$fwLZFUdmFn3ZyEb2irRfj.pDKjb7k5dWhAUvxGmZ44mH1aEPNjQQ.', NULL, '2023-10-27 00:25:09', '2023-10-27 00:26:02');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -687,6 +764,12 @@ ALTER TABLE `failed_jobs`
 -- Chỉ mục cho bảng `images`
 --
 ALTER TABLE `images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `menus`
+--
+ALTER TABLE `menus`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -722,6 +805,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
@@ -736,7 +825,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -749,6 +838,12 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `images`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=543;
+
+--
+-- AUTO_INCREMENT cho bảng `menus`
+--
+ALTER TABLE `menus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -766,19 +861,25 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT cho bảng `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT cho bảng `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
