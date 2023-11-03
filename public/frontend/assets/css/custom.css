@@ -2,10 +2,6 @@
     --main-color:#aa8453;
     --sub-color:#e0781c;
     --light-color:#fff;
-
-    /*--body-fontface:'UTM Avo', sans-serif;
-    --title-fontface:'UTM Avo';
-    --subtitle-fontface:'UTM Avo';*/
 }
 
 .lang_icon{
@@ -13,22 +9,7 @@
 }
 
 .lang_icon img{ width: 27px; margin-right: 5px }
-/*.lang_icon .dropdown-toggle:after{
-	left: -10px;
-    transform: translateY(-42%) rotate(0deg) !important;
-    -webkit-transition: all 300ms ease-in-out 0s;
-}
-.lang_icon .Vietnamese:after{
-    content: url(../img/vn-1x.webp) !important;
-    width: 
-}*/
-/*.header-style .lang_icon .Vietnamese:after{
-    content: url(../img/vn-1x.webp) !important;
-}*/
 
-.nav-primary-hover .navbar-nav .active>.nav-link, .nav-primary-hover .navbar-nav .nav-link:hover, .nav-primary-hover .navbar-nav .active>.nav-link:hover, .nav-primary-hover .navbar-nav .active>.nav-link{
-	/*color: #fff !important;*/
-}
 .fixed-bg-primary.fixed-top, .nav-primary-hover.nav-line-active .navbar-nav .active>.nav-link:before, .nav-primary-hover.nav-down-line-active .navbar-nav .active>.nav-link:before, .bg-primary{ width: 35px; background-color: #ddb60f !important;  }
 .post-content h2{ font-size: 1.2rem }
 .news .thumb-blog-horizontal img{ height: 200px; object-fit: cover; width: 100%; }
@@ -100,7 +81,7 @@ h2.heading-title::after {
     font-style: italic;
 }
 .header-style-1 .nav-primary-hover .navbar-nav .nav-link:hover{
-    color: #fff !important;
+    color: #212529 !important;
 }
 .nav-primary-hover .navbar-nav .nav-link{
     position: relative;
@@ -119,8 +100,10 @@ h2.heading-title::after {
     content: none !important;
 }
 .header-style-1 .nav-primary-hover .navbar-nav .active>.nav-link{
-    color: #fff !important;
+    color: #212529 !important;
 }
+
+.nav-white .navbar-nav .nav-link{ color: #212529 !important; }
 
 .content ul li{
     list-style: circle;
@@ -259,5 +242,44 @@ h2.heading-title::after {
 .banlanhdao .item img{ height: 313px; object-fit: cover; }
 .banlanhdao .item h3{ font-size: 1.3rem; margin-top: 20px; line-height: 1.3rem; }
 .banlanhdao .item p{ font-size: 1rem; padding-bottom: 10px; color: #f5821f }
+.home_slider .item img{ height:80vh; object-fit:cover; width:100% }
 
-.home_slider .item img{ height:100vh; object-fit:cover; width:100% }
+.pl-250{ padding-left:250px }
+.pr-250{ padding-right:250px }
+.flex-center{ align-items: center; }
+
+.nav-on-banner{ position:sticky; top:0px; background-color:#fff }
+
+.dd23423{ background:#cdb98d;  }
+.sss24234{ text-align:center; }
+.dd234234 h3{ text-align:center; color: #9B5015;  }
+.dd234234 p{ color: #000;  }
+.dd234234 .button{ text-align:center; }
+.dd234234 .button button{ background:#9B5015; color:#fff; border:none; border-radius:3px; padding:5px 20px; }
+
+
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  display: flex;
+    justify-content: space-between;
+}
+.tab button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #9B5015; 
+  width: 100%;
+  border-bottom:3px solid #ddd; font-weight: bold;
+}
+.tab button:hover, .tab button.active {
+  border-bottom: #9B5015 3px solid;
+}
+.tabcontent {
+  display: none;
+}

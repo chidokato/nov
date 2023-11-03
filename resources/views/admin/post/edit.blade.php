@@ -10,6 +10,11 @@
         <li class="nav-item"> <a class="nav-link line-1" href="{{route('post.index')}}" ><i class="fa fa-chevron-left" aria-hidden="true"></i> <span class="mobile-hide">Quay lại</span> </a> </li>
     </ul>
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link" target="_blank" href="{{asset('')}}" >
+                <i class="fas fa-external-link-alt mr-2"></i> {{__('lang.home')}}
+            </a>
+        </li>
         <li class="nav-item mobile-hide">
             <button type="reset" class="btn-danger mr-2 form-control"><i class="fas fa-sync"></i> Làm mới</button>
         </li>

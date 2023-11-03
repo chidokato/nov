@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Image;
 use File;
 use App\Models\Category;
+use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Images;
 use App\Models\ProvinceTranslation;
@@ -84,6 +85,13 @@ class AjaxController extends Controller
     public function update_category_view($id,$view)
     {
         $data = Category::find($id);
+        $data->view = $view;
+        $data->save();
+    }
+
+    public function update_menu_view($id,$view)
+    {
+        $data = Menu::find($id);
         $data->view = $view;
         $data->save();
     }

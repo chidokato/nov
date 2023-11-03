@@ -289,16 +289,16 @@
     });
 
     // Update Header Style + Scroll to Top
-    function headerStyle() {
-        if ($header.length) {
-            var windowpos = $window.scrollTop();
-            if (windowpos >= 1) {
-                $header.addClass('fixed-top');
-            } else {
-                $header.removeClass('fixed-top');
-            }
-        }
-    }
+    // function headerStyle() {
+    //     if ($header.length) {
+    //         var windowpos = $window.scrollTop();
+    //         if (windowpos >= 1) {
+    //             $header.addClass('fixed-top');
+    //         } else {
+    //             $header.removeClass('fixed-top');
+    //         }
+    //     }
+    // }
 
     // Update menu_project Style + Scroll to Top
     // function projectStyle() {
@@ -819,7 +819,26 @@
         }
     });
 
-    $('.home_slider_news').owlCarousel({
+    $('.home_slider_iteam').owlCarousel({
+        loop:true,
+        lazyLoad: true,
+        margin:0,
+        nav:true,
+        dots:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    });
+
+    $('.home_slider_img').owlCarousel({
         loop:true,
         lazyLoad: true,
         margin:15,
@@ -827,7 +846,7 @@
         dots:false,
         responsive:{
             0:{
-                items:1
+                items:2
             },
             600:{
                 items:2
@@ -958,6 +977,9 @@
         event.preventDefault();
       });
     });
+
+
+    
 
 
 })(jQuery);

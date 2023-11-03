@@ -99,6 +99,15 @@ $(document).ready(function(){
             // $("#load_category").html(data);
         });
     });
+
+    $("input#menu_view").blur(function(){
+        var view = $(this).val();
+        var id = $(this).parents('#menu').find('input[name="id"]').val();
+        // alert(id);
+        $.get("ajax/update_menu_view/"+id+"/"+view,function(data){
+            // $("#load_category").html(data);
+        });
+    });
 });
 
 // sản phẩm

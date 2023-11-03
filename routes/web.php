@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Admin\Users\UserController;
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ProductController;
@@ -41,6 +42,7 @@ Route::group(['prefix'=>'ajax'],function(){
     Route::get('change_SortBy/{id}', [AjaxController::class, 'change_SortBy']);
     Route::get('change_parent/{id}', [AjaxController::class, 'change_parent']);
     Route::get('update_category_view/{id}/{view}', [AjaxController::class, 'update_category_view']);
+    Route::get('update_menu_view/{id}/{view}', [AjaxController::class, 'update_menu_view']);
     Route::get('del_img_detail/{id}', [AjaxController::class, 'del_img_detail']);
     Route::get('del_section/{id}', [AjaxController::class, 'del_section']);
     Route::get('update_status_category/{id}/{status}', [AjaxController::class, 'update_status_category']);
@@ -57,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('district',DistrictController::class);
         Route::resource('ward',WardController::class);
 
+        Route::resource('menu',MenuController::class);
         Route::resource('category',CategoryController::class);
 
         Route::resource('post',PostController::class);
@@ -76,7 +79,7 @@ Route::middleware(['auth'])->group(function () {
 
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('about', [HomeController::class, 'about'])->name('about');
-Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+// Route::get('about', [HomeController::class, 'about'])->name('about');
+// Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('{slug}', [HomeController::class, 'category']);
 Route::get('{catslug}/{slug}', [HomeController::class, 'post']);

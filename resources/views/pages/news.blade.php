@@ -7,7 +7,6 @@
 
 @section('content')
 <div id="page_wrapper" class="bg-light news">
-@include('layout.header_page')
 
 <div class="full-row py-3" style="margin-top: 70px;">
     <div class="container">
@@ -16,7 +15,7 @@
                 <h1 class="text-secondary">{{$data->name}}</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 bg-transparent p-0">
-                        <li class="breadcrumb-item"><a href="{{asset('')}}">{{__('lang.home')}}</a></li>
+                        <li class="breadcrumb-item"><a href="{{asset('')}}">Trang chủ</a></li>
                         <!-- <li class="breadcrumb-item"><a href="#">Listing</a></li> -->
                         <li class="breadcrumb-item active text-primary" aria-current="page">{{$data->name}}</li>
                     </ol>
@@ -73,9 +72,26 @@
             <div class="col-xl-8 order-xl-1 sm-mb-30">
                 <div class="row row-cols-1 g-4">
                     @foreach($post as $val)
-
-                        @include('pages.iteam.news')
-                    
+                    <div class="col">
+                        <div class="thumb-blog-horizontal clearfix hover-img-zoom transation border p-2 bg-white">
+                            <div class="post-image overflow-hidden">
+                                <a href=""><img src="data/news/{{$val->img}}" alt="Image not found!"></a>
+                            </div>
+                            <div class="post-content ps-3">
+                                <div class="post-meta font-mini text-uppercase list-color-light">
+                                    <a href=""><span>{{$val->name}}</span></a>
+                                </div>
+                                <h2 class="mb-2">
+                                    <a href="{{$val->slug}}/{{$val->slug}}" class="transation text-dark hover-text-primary d-block line-2">{{$val->name}}</a>
+                                </h2>
+                                <p>{{$val->detail}}</p>
+                                <div class="post-meta font-general">
+                                    By <a href="#"><span>Admin</span></a>
+                                    <a href="#"><span>{{date('d/m/Y',strtotime($val->updated_at))}}</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
                 </div>
 
