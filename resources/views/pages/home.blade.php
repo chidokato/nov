@@ -28,8 +28,17 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="img">
-                    <img src="frontend/img/32.jpg">
+                <div class="owl-carousel slider_thumb" data-slider-id="1">
+                    <div class="item">
+                        <img src="frontend/img/32.jpg">
+                    </div>
+                    <div class="item">
+                        <img src="frontend/img/32.jpg">
+                    </div>
+                </div>
+                <div class="owl-thumbs" data-slider-id="1">
+                    <button class="owl-thumb-item"><img src="frontend/img/32.jpg"></button>
+                    <button class="owl-thumb-item"><img src="frontend/img/32.jpg"></button>
                 </div>
                 <!-- <div class="owl-carousel owl-theme home_slider_img">
                     <div class="item">
@@ -58,6 +67,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <div class="full-row pt-70 pb-70 section-2 bg-light">

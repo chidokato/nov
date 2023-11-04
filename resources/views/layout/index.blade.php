@@ -84,7 +84,7 @@
     <script src="frontend/assets/js/mixitup.min.js"></script>
     <script src="frontend/assets/js/paraxify.js"></script>
     <script src="frontend/assets/js/custom.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="frontend/assets/js/owl.carousel2.thumbs.js"></script>
     <script>
         AOS.init();
     </script>
@@ -96,6 +96,8 @@
         // $(document).ready(function() { $('.select2').select2({ placeholder: '...'}); });
         $(document).ready(function() { $('.select2').select2({ searchInputPlaceholder: '{{__('lang.text1')}}' }); });
     </script>
+
+    
 
     @yield('js')
 

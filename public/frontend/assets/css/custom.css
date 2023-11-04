@@ -283,3 +283,7 @@ h2.heading-title::after {
 .tabcontent {
   display: none;
 }
+
+.owl-thumbs{ margin-top:-100px; position:absolute; z-index:9; }
+.owl-thumbs button{ border:none; background:none; padding:0px; }
+.owl-thumbs img{ width:300px; }

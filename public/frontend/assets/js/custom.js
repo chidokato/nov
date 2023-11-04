@@ -897,6 +897,29 @@
     });
 
 
+    $(document).ready(function(){
+      $('.slider_thumb').owlCarousel({
+        dots:false,
+        thumbs: true,
+        thumbImage: false,
+        thumbsPrerendered: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item',
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+      });
+    });
+
+
 
     // Elements Animation
     if ($('.wow').length) {
