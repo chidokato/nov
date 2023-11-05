@@ -24,8 +24,8 @@
     line-height: 47px;
 }
 .owl-carousel .owl-nav button.owl-prev span{
-	left: 20px;
+	left: 0px;
 }
 .owl-carousel .owl-nav button.owl-next span{
-	right: 20px;
+	right: 0px;
 }

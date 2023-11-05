@@ -825,6 +825,9 @@
         margin:0,
         nav:true,
         dots:false,
+        thumbs: false,
+        thumbImage: false,
+        thumbsPrerendered: false,
         responsive:{
             0:{
                 items:1
@@ -846,7 +849,7 @@
         dots:false,
         responsive:{
             0:{
-                items:2
+                items:1
             },
             600:{
                 items:2
@@ -857,9 +860,8 @@
         }
     });
 
-    $('.slider_banlanhdao').owlCarousel({
-        loop:true,
-        lazyLoad: true,
+    $('.slider_tintuc').owlCarousel({
+        loop:false,
         margin:15,
         nav:true,
         dots:false,
@@ -871,7 +873,7 @@
                 items:2
             },
             1000:{
-                items:5
+                items:4
             }
         }
     });
