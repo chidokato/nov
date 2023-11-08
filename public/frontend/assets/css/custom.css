@@ -327,3 +327,27 @@ h2.heading-title::after {
 .section_7 .item h3{ color:var(--main-color); font-size:1rem; line-height:1.3rem }
 .section_7 .item p{line-height: 1.3rem}
 .section_7 .button{ text-align: center; }
+
+footer{ margin:0; padding:0 }
+.bg-footer{ background-color:var(--sub-color) !important; }
+
+.footer_1 .col-md-7{ background: url(../../img/z4739940258021_e75f70406d432333b1f3a50a5176ecdd.jpg); }
+.footer_1 .col-md-5{ background: url(../../img/7_2.jpg); }
+.footer_1 .form{ padding:50px; color:#fff; text-align:center; }
+.footer_1 .form h4{ color:#fff; font-size:1.2rem }
+
+.footer_2{ background-color:#9b501533; }
+.footer_2 .col-md-5{ background: url(../../img/bg-2.jpg); }
+.footer_2 .logo_footer { text-align:center; color:#000 }
+.footer_2 .logo_footer img{ width:250px; margin-bottom:20px }
+.footer_2 .address h3{ font-size:1.3rem }
+.footer_2 .address .dd222{ display:flex; align-items: center; margin-bottom:20px }
+.footer_2 .address .dd222 .icon{ width:10% }
+.footer_2 .address .dd222 img{ width:100%; }
+.footer_2 .address .dd222 p{ line-height:1.2rem; margin-left:6px; width:90% }
+
+.category{ display:flex; flex-direction: column; align-items: center; justify-content: center; height: 350px }
+
+.about_1{}
+
+.info-button{ display:flex; }

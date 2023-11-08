@@ -10,6 +10,9 @@ use Illuminate\Support\Str;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
+use Image;
+use File;
+
 class CategoryController extends Controller
 {
     /**
@@ -55,6 +58,15 @@ class CategoryController extends Controller
         $category->title = $data['title'];
         $category->description = $data['description'];
         $category->slug = Str::slug($data['name'], '-');
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/category/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/category', $filename);
+            $category->img = $filename;
+        }
+
         $category->save();
         return redirect('admin/category')->with('success','updated successfully');
     }
@@ -103,6 +115,18 @@ class CategoryController extends Controller
         $category->title = $data['title'];
         $category->description = $data['description'];
         $category->slug = $data['slug'];
+
+        // thêm ảnh
+        if ($request->hasFile('img')) {
+            if(File::exists('data/category/'.$category->img)) { File::delete('data/category/'.$category->img);} // xóa ảnh cũ
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/category/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/category', $filename);
+            $category->img = $filename;
+        }
+        // thêm ảnh
+
         $category->save();
 
         return redirect()->back();

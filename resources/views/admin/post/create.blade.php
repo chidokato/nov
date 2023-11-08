@@ -125,22 +125,21 @@
                 </div>
             </div>
           </div>
-          <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Images</h6>
-            </div>
-            <div class="card-body">
-                <div class="file-upload">
-                    <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="{{ isset($data) ? 'data/news/'.$data->img : 'data/no_image.jpg' }}" />
-                    </div>
-                    <div class="image-upload-wrap">
-                        <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Images</h6>
+                </div>
+                <div class="card-body">
+                    <div class="file-upload">
+                        <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
+                            <img class="file-upload-image" src="{{ isset($data) ? 'data/news/'.$data->img : 'data/no_image.jpg' }}" />
+                        </div>
+                        <div class="image-upload-wrap">
+                            <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </div>
       </div>
 </div>
 </form>

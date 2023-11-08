@@ -3,7 +3,7 @@
 @section('content')
 @include('admin.alert')
 
-<form method="post" action="{{route('category.update', [$data->id])}}">
+<form method="post" action="{{route('category.update', [$data->id])}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow fixed">
@@ -108,23 +108,22 @@
             </div>
 
         </div>
-        <!-- <div class="card shadow mb-4">
+        <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Images</h6>
             </div>
             <div class="card-body">
                 <div class="file-upload">
                     <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="{{ isset($data) ? 'data/category/'.$data->img : 'data/no_image.jpg' }}" />
+                        <img class="file-upload-image" src="data/category/{{$data->img}}" />
                     </div>
                     <div class="image-upload-wrap">
                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                     </div>
-                    <label><input type="checkbox" name="dell_img">Xóa ảnh</label>
                 </div>
             </div>
 
-        </div> -->
+        </div>
       </div>
 </div>
 </form>

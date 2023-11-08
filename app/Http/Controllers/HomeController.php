@@ -65,9 +65,12 @@ class HomeController extends Controller
             $cat_array[] = $cate->id;
         }
         // cat_array
-
-        if ($data->sort_by == 'News') {
-            $post = Post::orderBy('id', 'desc')->paginate(18);
+        if ($slug == 'gioi-thieu') {
+            return view('pages.about', compact(
+                'data',
+            ));
+        }else{
+            $post = Post::orderBy('id', 'desc')->paginate(8);
             return view('pages.news', compact(
                 'data',
                 'post'
