@@ -13,6 +13,7 @@ use File;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Images;
 
 
 class PostController extends Controller
@@ -68,8 +69,21 @@ class PostController extends Controller
             $post->img = $filename;
         }
         // thêm ảnh
-
         $post->save();
+
+        if($request->hasFile('imgdetail')){
+            foreach ($request->file('imgdetail') as $file) {
+                if(isset($file)){
+                    $Images = new Images();
+                    $Images->post_id = $post->id;
+                    $filename = $file->getClientOriginalName();
+                    while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
+                    $file->move('data/product/detail', $filename);
+                    $Images->img = $filename;
+                    $Images->save();
+                }
+            }
+        }
         return redirect('admin/post')->with('Success','Success');
     }
 
@@ -93,8 +107,10 @@ class PostController extends Controller
     public function edit($id)
     {
         $category = Category::where('sort_by', 'News')->where('parent', '0')->orderBy('id', 'DESC')->get();
+
         $data = Post::find($id);
-        return view('admin.post.edit')->with(compact('category', 'data'));
+        $images = Images::where('post_id', $data->id)->get();
+        return view('admin.post.edit')->with(compact('category', 'data', 'images'));
     }
 
     /**
@@ -126,6 +142,22 @@ class PostController extends Controller
         }
         // thêm ảnh
         $post->save();
+
+        if($request->hasFile('imgdetail')){
+            foreach ($request->file('imgdetail') as $file) {
+                if(isset($file)){
+                    $Images = new Images();
+                    $Images->post_id = $post->id;
+                    $filename = $file->getClientOriginalName();
+                    while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
+                    $file->move('data/product/detail', $filename);
+                    $Images->img = $filename;
+                    $Images->save();
+                }
+            }
+        }
+
+        
         return redirect()->back()->with('Success','Success');
     }
 

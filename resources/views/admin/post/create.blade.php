@@ -61,7 +61,7 @@
         <div class="card shadow mb-2">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Tiếng Việt</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Nội dung</a></li>
                    <!--  <li><a data-toggle="tab" class="nav-link" href="#en">Tiếng Anh</a></li>
                     <li><a data-toggle="tab" class="nav-link" href="#cn">Tiếng Trung</a></li> -->
                 </ul>
@@ -110,7 +110,7 @@
     <div class="col-xl-3 col-lg-3">
         <div class="card shadow mb-4">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
             </div>
             <div class="card-body">
                 <div class="form-group">
@@ -127,7 +127,7 @@
           </div>
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Images</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>
                 </div>
                 <div class="card-body">
                     <div class="file-upload">
@@ -140,6 +140,21 @@
                     </div>
                 </div>
             </div>
+
+            <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Chọn nhiều ảnh</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="file" name="imgdetail[]" multiple class="form-control">
+                    <p>Nhấn giữ <i style="color: red">Ctrl</i> để chọn nhiều ảnh !</p>
+                </div>
+                
+            </div>
+        </div>
+
+        
       </div>
 </div>
 </form>

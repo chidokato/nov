@@ -69,9 +69,16 @@ class HomeController extends Controller
             return view('pages.about', compact(
                 'data',
             ));
-        }else{
-            $post = Post::orderBy('id', 'desc')->paginate(8);
-            return view('pages.news', compact(
+        }elseif($slug == 'san-pham'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.sanpham', compact(
+                'data',
+                'post'
+            ));
+        }
+        elseif($slug == 'canh-quan'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.canhquan', compact(
                 'data',
                 'post'
             ));
@@ -81,7 +88,7 @@ class HomeController extends Controller
     public function post($catslug, $slug)
     {
         $post = Post::where('slug', $slug)->first();
-        // $related_post = Post::where('category_id', $post->category_id)->get();
+        $cat = Category::where('slug', $catslug)->first();
         if ($post->sort_by == 'Product') {
             return view('pages.project', compact(
                 'post',
@@ -90,6 +97,7 @@ class HomeController extends Controller
         }elseif ($post->sort_by == 'News') {
             return view('pages.post', compact(
                 'post',
+                'cat',
                 // 'related_post',
             ));
         }

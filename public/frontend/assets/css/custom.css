@@ -350,4 +350,22 @@ footer{ margin:0; padding:0 }
 
 .about_1{}
 
-.info-button{ display:flex; }
+.info-button{ display:flex; margin-top:20px }
+
+.content_1 h1{ font-size:1.5rem; color:var(--main-color); }
+.news_1 h2{ font-size:1.5rem; color:var(--main-color); line-height:1.7rem; margin-top:50px }
+.news_1 h3{ font-size:1.2rem; color:var(--main-color); }
+.content_1 p{ line-height:1.5rem; margin-bottom:7px }
+
+.news_slider img{ height:500px !important }
+
+.text-justify{ text-align:justify; }
+
+.post h1{ color:var(--main-color) !important; font-size:1.7rem; margin-bottom:20px }
+.post h2{ font-size:1.3rem; line-height:1.7rem; margin-bottom:15px }
+.post p{ font-size:1rem; line-height:1.7rem; margin-bottom:10px; text-align:justify; }
+
+.ggg44 h2{ font-size:1.7rem; color:var(--main-color); font-weight:bold; }
+.ggg44 p{ font-size:1.3rem; color:var(--main-color); }
+
+.item_news{  }

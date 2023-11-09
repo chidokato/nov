@@ -1,6 +1,7 @@
 @extends('admin.layout.main')
 @section('content')
 @include('admin.alert')
+<?php use App\Models\Images; ?>
 <form method="POST" action="{{route('post.update', [$data->id])}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
@@ -35,7 +36,7 @@
         <div class="card shadow mb-2">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Tiếng Việt</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Nội dung</a></li>
                 </ul>
             </div>
             <div class="tab-content overflow">
@@ -81,7 +82,7 @@
     <div class="col-xl-3 col-lg-3">
         <div class="card shadow mb-4">
           <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Thông tin chi tiết</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
             </div>
             <div class="card-body">
                 <div class="form-group">
@@ -97,7 +98,7 @@
           </div>
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Images</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>
             </div>
             <div class="card-body">
                 <div class="file-upload">
@@ -111,7 +112,39 @@
             </div>
 
         </div>
+
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Chọn nhiều ảnh</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input type="file" name="imgdetail[]" multiple class="form-control">
+                    <p>Nhấn giữ <i style="color: red">Ctrl</i> để chọn nhiều ảnh !</p>
+                </div>
+                <div class="row detail-img">
+                    @foreach($images as $val)
+                    <div class="col-md-4" id="detail_img">
+                        <img src="data/product/detail/{{$val->img}}">
+                        <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
+                        <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$val->id}}" />
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+
+
       </div>
 </div>
 </form>
+<script>
+    function addCode() {
+        document.getElementById("add_to_me").insertAdjacentHTML("beforeend",
+                '<div class="form-group d-flex align-items-center justify-content-between" id="section_list"><input class="form-control" type="text" name="name_section:vi[]" placeholder="Tiếng Việt"><input class="form-control" type="text" name="name_section:en[]" placeholder="Tiếng Anh"><input class="form-control" type="text" name="name_section:cn[]" placeholder="Tiếng Trung"><button type="button" onClick="delete_row(this)" class="form-control w100"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></div>');
+    }
+    function delete_row(e) {
+        e.parentElement.remove();
+    }
+</script>
 @endsection

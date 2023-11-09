@@ -53,10 +53,6 @@
     <link rel="stylesheet" href="frontend/assets/css/loader.css"> 
     <link rel="stylesheet" href="frontend/assets/css/custom.css">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- animation -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js" async=""></script> <!-- lazy laod -->
-
     <!-- select2 multiple css -->
     <link href="admin_asset/select2/css/select2.min.css" rel="stylesheet">
 
@@ -84,20 +80,13 @@
     <script src="frontend/assets/js/mixitup.min.js"></script>
     <script src="frontend/assets/js/paraxify.js"></script>
     <script src="frontend/assets/js/custom.js"></script>
-    <script src="frontend/assets/js/owl.carousel2.thumbs.js"></script>
-    <script>
-        AOS.init();
-    </script>
-
+    
     <!-- select2 multiple JavaScript -->
     <script src="admin_asset/select2/js/select2.min.js"></script>
     <script src="admin_asset/select2/js/select2-searchInputPlaceholder.js"></script>
     <script type="text/javascript">
-        // $(document).ready(function() { $('.select2').select2({ placeholder: '...'}); });
         $(document).ready(function() { $('.select2').select2({ searchInputPlaceholder: '{{__('lang.text1')}}' }); });
     </script>
-
-    
 
     @yield('js')
 
