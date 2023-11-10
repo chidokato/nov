@@ -1,0 +1,23 @@
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 991px) {
+    .navbar-collapse{ position: absolute; background-color: #fff; width:100%; top:62px; right:-10px; z-index:999; padding:20px; box-shadow: 0px 0px 1px 1px #ddd; border-radius:3px }
+    .navbar-nav{ border:none; }
+    .navbar{ border-bottom:1px solid #ddd; }
+    .nav-white .navbar-nav .nav-link{ font-size:1.1rem; margin:6px; }
+    .nav-white .dropdown-item{ color:#000; font-size:1.1rem; margin:6px; }
+    .nav-primary-hover .navbar-nav .nav-link:hover:before{ bottom:6px }
+
+    .home_slider .item img{ height:50vh }
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+
+@media screen and (max-width: 480px) {
+    .home_slider .item img{ height:30vh }
+}

@@ -252,7 +252,7 @@ h2.heading-title::after {
 
 .flex-center{ align-items: center; }
 
-.nav-on-banner{ position:sticky; top:0px; background-color:#fff }
+.nav-on-banner{ position:sticky !important; top:0px; background-color:#fff }
 
 .dd23423{ background:#cdb98d;  }
 .sss24234{ text-align:center; }

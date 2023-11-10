@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="frontend/assets/css/colors/color.css">
     <link rel="stylesheet" href="frontend/assets/css/loader.css"> 
     <link rel="stylesheet" href="frontend/assets/css/custom.css">
+    <link rel="stylesheet" href="frontend/assets/css/responsive.css">
 
     <!-- select2 multiple css -->
     <link href="admin_asset/select2/css/select2.min.css" rel="stylesheet">
