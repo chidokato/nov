@@ -25,8 +25,9 @@
 <div class="full-row pt-70 pb-70 section-1 bg-light">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 d-flex flex-center">
-                <div class="home-content container-50">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 d-flex flex-center">
+                <div class="home-content">
                     <h2>Công Viên Nghĩa trang Thiên Đường</h2>
                     <h3>Miền thảnh thơi, miền di sản…</h3>
                     <p>Cuộc đời là hành trình một chiều, mỗi khoảnh khắc trong cuộc đời là duy nhất.</p>
@@ -64,9 +65,9 @@
 </div>
 
 <div class=" section-2 ">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-11">
                 <div class="owl-carousel owl-theme home_slider_iteam">
 
                     <div class="item">
@@ -106,6 +107,7 @@
                     
                 </div>
             </div>
+            <div class="col-lg-1"></div>
         </div>
     </div>
 </div>
