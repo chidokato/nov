@@ -71,14 +71,42 @@ class HomeController extends Controller
             ));
         }elseif($slug == 'san-pham'){
             $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
-            return view('pages.sanpham', compact(
+            return view('pages.category.sanpham', compact(
                 'data',
                 'post'
             ));
         }
         elseif($slug == 'canh-quan'){
             $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
-            return view('pages.canhquan', compact(
+            return view('pages.category.canhquan', compact(
+                'data',
+                'post'
+            ));
+        }
+        elseif($slug == 'tien-ich-dich-vu' || $slug == 'tien-ich' || $slug == 'dich-vu'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.category.tienich', compact(
+                'data',
+                'post'
+            ));
+        }
+        elseif($slug == 'dai-hoa-than'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.category.daihoathan', compact(
+                'data',
+                'post'
+            ));
+        }
+        elseif($slug == 'tin-tuc'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.category.canhquan', compact(
+                'data',
+                'post'
+            ));
+        }
+        elseif($slug == 'lien-he'){
+            $post = Post::where('category_id', $data->id)->orderBy('updated_at', 'DESC')->paginate(8);
+            return view('pages.contact', compact(
                 'data',
                 'post'
             ));

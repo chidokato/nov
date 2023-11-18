@@ -18,12 +18,12 @@
     </div>
 </div>
 
-<div class="full-row pb-10 content_1">
+<div class="full-row pt-5 pb-5 content_1">
     <div class="container">
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <div class="text-secondary mb-5 news_1">
+                <div class="text-secondary news_1">
                     {!!$data->content!!}
                 </div>
             </div>

@@ -17,22 +17,35 @@
         </div>
     </div>
 </div>
-<div class="full-row pb-30 cat_news pt-10">
+<div class="full-row pb-30 cat_news pt-50">
     <div class="container ">
         <div class="row">
-            <div class="col-lg-4">
+            @foreach($post as $val)
+            <div class="col-lg-5">
                 <div class="item_news">
-                    <div class="img"><img src="frontend/img/24_2.jpg"></div>
+                    <div class="img"><img src="data/news/{{$val->img}}"></div>
+                </div>
+            </div>
+            <div class="col-lg-7 d-flex flex-center">
+                <div class="item_news">
                     <div class="info p-2">
-                        <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                        <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
+                        <a href="{{$val->category->slug}}/{{$val->slug}}"><h2>{{$val->name}}</h2></a>
+                        <div class="detail text-truncate-set text-truncate-set-3">{{$val->detail}}</div>
+                        <div class="info-button">
+                            <div class="button mr-10"><a href="{{$val->category->slug}}/{{$val->slug}}"><button>Xem thêm >> </button></a></div>
+                            <div class="button"><button>Nhận tư vấn</button></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            @endforeach
         </div>
     </div>
 </div>
+<style type="text/css">
+    .item_news h2{ text-align:left; }
+    .item_news .img img{ height:280px; width:100%; object-fit:cover; border-radius:0px 40px 0px 40px }
+</style>
 
 @endsection
 
