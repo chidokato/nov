@@ -6,7 +6,7 @@
 @section('url'){{asset('')}}@endsection
 
 @section('content')
-<div class="page-banner-simple bg-secondary py-0" style="background: url(frontend/img/8_3.jpg) no-repeat center center;">
+<div class="page-banner-simple bg-secondary py-0 background_black" style="background: url(frontend/img/8_3.jpg) no-repeat center center;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 category">
