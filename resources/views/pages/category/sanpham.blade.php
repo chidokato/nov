@@ -44,7 +44,7 @@
         <div class="row  pb-4 pt-4 bg-light">
             <div class="col-lg-6">
                 <div class="owl-carousel home_slider news_slider">
-                    <div class="item"><img alt="slide" src="data/news/{{$val->img}}"></div>
+                    <div class="item"><a href="{{$val->category->slug}}/{{$val->slug}}"><img alt="slide" src="data/news/{{$val->img}}"></a></div>
                     @foreach($val->Images as $img)
                     <div class="item"><img alt="slide" src="data/product/detail/{{$img->img}}"></div>
                     @endforeach
@@ -52,7 +52,7 @@
             </div>
             <div class="col-lg-4 d-flex flex-center">
                 <div class="text-secondary mb-5">
-                    <h2>{{$val->name}}</h2>
+                    <h2><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h2>
                     <div class="text-justify">{!!$val->detail!!}</div>
                     <div class="info-button">
                         <div class="button mr-10"><a href="{{$val->category->slug}}/{{$val->slug}}"><button>Xem thêm >> </button></a></div>
@@ -67,7 +67,7 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-4 d-flex flex-center">
                 <div class="text-secondary mb-5">
-                    <h2>{{$val->name}}</h2>
+                    <h2><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h2>
                     <div class="text-justify">{!!$val->detail!!}</div>
                     <div class="info-button">
                         <div class="button mr-10"><a href="{{$val->category->slug}}/{{$val->slug}}"><button>Xem thêm >> </button></a></div>
@@ -77,7 +77,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="owl-carousel home_slider news_slider">
-                    <div class="item"><img alt="slide" src="data/news/{{$val->img}}"></div>
+                    <div class="item"><a href="{{$val->category->slug}}/{{$val->slug}}"><img alt="slide" src="data/news/{{$val->img}}"></a></div>
                     @foreach($val->Images as $img)
                     <div class="item"><img alt="slide" src="data/product/detail/{{$img->img}}"></div>
                     @endforeach

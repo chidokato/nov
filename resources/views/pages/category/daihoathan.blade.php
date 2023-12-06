@@ -23,9 +23,9 @@
             @foreach($post as $val)
             <div class="col-lg-4">
                 <div class="item_news border-radius-10">
-                    <div class="img"><img src="data/news/{{$val->img}}"></div>
+                    <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                     <div class="info p-2">
-                        <h2>{{$val->name}}</h2>
+                        <h2><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h2>
                         <div class="detail text-truncate-set text-truncate-set-3 p-2 pt-0">{{$val->detail}}</div>
                     </div>
                 </div>

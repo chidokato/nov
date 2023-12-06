@@ -23,7 +23,7 @@
             @foreach($post as $val)
             <div class="col-lg-5">
                 <div class="item_news">
-                    <div class="img"><img src="data/news/{{$val->img}}"></div>
+                    <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                 </div>
             </div>
             <div class="col-lg-7 d-flex flex-center">
