@@ -36,7 +36,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $category = Category::where('sort_by', 'News')->where('parent', '0')->orderBy('id', 'DESC')->get();
+        $category = Category::where('sort_by', 'News')->orderBy('id', 'DESC')->get();
         return view('admin.post.create')->with(compact('category'));
     }
 
@@ -106,8 +106,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::where('sort_by', 'News')->where('parent', '0')->orderBy('id', 'DESC')->get();
-
+        $category = Category::where('sort_by', 'News')->get();
         $data = Post::find($id);
         $images = Images::where('post_id', $data->id)->get();
         return view('admin.post.edit')->with(compact('category', 'data', 'images'));

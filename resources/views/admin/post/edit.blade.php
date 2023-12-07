@@ -89,9 +89,7 @@
                     <label class="">Danh mục</label>
                     <select name='category_id' class="form-control select2" id="parent">
                       <option value="">--Chọn danh mục--</option>
-                      @foreach($category as $val)
-                      <option <?php if($val->id == $data->category_id){echo 'selected'; } ?> value="{{$val->id}}">{{$val->name}}</option>
-                      @endforeach
+                      <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
                     </select>
                 </div>
             </div>
@@ -138,6 +136,23 @@
       </div>
 </div>
 </form>
+<?php 
+    function addeditcat ($data, $parent=0, $str='',$select=0)
+    {
+        foreach ($data as $value) {
+            if ($value['parent'] == $parent) {
+                if($select != 0 && $value['id'] == $select )
+                { ?>
+                    <option value="<?php echo $value['id']; ?>" selected> <?php echo $str.$value['name']; ?> </option>
+                <?php } else { ?>
+                    <option value="<?php echo $value['id']; ?>" > <?php echo $str.$value['name']; ?> </option>
+                <?php }
+                
+                addeditcat ($data, $value['id'], $str.'___',$select);
+            }
+        }
+    }
+?>
 <script>
     function addCode() {
         document.getElementById("add_to_me").insertAdjacentHTML("beforeend",
