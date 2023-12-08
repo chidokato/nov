@@ -21,12 +21,12 @@
     <div class="container ">
         <div class="row">
             @foreach($post as $val)
-            <div class="col-lg-5">
+            <div class="col-lg-5 mb-4">
                 <div class="item_news">
                     <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                 </div>
             </div>
-            <div class="col-lg-7 d-flex flex-center">
+            <div class="col-lg-7 d-flex flex-center mb-4">
                 <div class="item_news">
                     <div class="info p-2">
                         <a href="{{$val->category->slug}}/{{$val->slug}}"><h2>{{$val->name}}</h2></a>
