@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::where('sort_by', 'News')->orderBy('id', 'DESC')->Paginate(10);
+        $post = Post::where('sort_by', 'News')->orderBy('id', 'DESC')->Paginate(30);
         return view('admin.post.index', compact('post'));
     }
 
