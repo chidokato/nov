@@ -371,9 +371,11 @@
         <div class="row">
             <div class="col-lg-12 mb-10">
                 <div class="owl-carousel slider_tintuc">
-                    <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
-                    </div>
+                    <div class="item "><div class="img img234"><a href="https://baohagiang.vn/thong-tin-quang-ba/202211/cong-vien-tam-linh-thien-duong-noi-hieu-nghia-ven-tron-danh-cho-dang-sinh-thanh-cc21d4d/"><img src="frontend/img/ha_giang_png_20211122103210.png"></a></div></div>
+                    <div class="item "><div class="img img234"><a href="https://baotuyenquang.com.vn/kinh-te/bat-dong-san-tam-linh-cong-vien-nghia-trang-tro-thanh-nhu-cau-tat-yeu-cua-xa-hoi-hien-dai-168797.html"><img src="frontend/img/img_20230130084001.jpg"></a></div></div>
+                    <div class="item "><div class="img img234"><a href="https://cafef.vn/cong-vien-tam-linh-thien-duong-du-an-cao-cap-tai-phia-bac-viet-nam-20230104160750419.chn"><img src="frontend/img/cafeF.png"></a></div></div>
+                    <div class="item "><div class="img img234"><a href="https://www.qdnd.vn/kinh-te/cac-van-de/du-an-lam-thay-doi-thoi-quen-phong-tuc-mai-tang-cua-nguoi-dan-mien-nui-664228"><img src="frontend/img/bannerv2.png"></a></div></div>
+                    <div class="item "><div class="img img234"><a href="http://nhipsongkinhte.toquoc.vn/cong-vien-tam-linh-thien-duong-du-an-cao-cap-tai-phia-bac-viet-nam-20230104113603295.htm"><img src="frontend/img/logo_nskt_tq.webp"></a></div></div>
                 </div>
             </div>
         </div>
