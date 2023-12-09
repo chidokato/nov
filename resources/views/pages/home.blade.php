@@ -343,32 +343,20 @@
 <div class="section_7 pb-50 bg-light">
     <div class="container">
         <div class="sss24234 pt-30 pb-10">
-            <h2>TIN TỨC NỔI BẬT</h2>
+            <h2>TIỆN ÍCH & DỊCH VỤ</h2>
         </div>
         <div class="row">
             <div class="col-lg-12 mb-10">
                 <div class="owl-carousel slider_tintuc">
+                    @foreach($tienich as $val)
                     <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
+                        <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                         <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
+                            <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+                            <p class="text-truncate-set text-truncate-set-3">{{$val->detail}}</p>
                         </div>
                     </div>
-                    <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
-                        <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
-                        </div>
-                    </div>
-                    <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
-                        <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -395,32 +383,20 @@
 <div class="section_7 pb-50 bg-light">
     <div class="container">
         <div class="sss24234 pt-30 pb-10">
-            <h2>THẾ GIỚI TÂM LINH</h2>
+            <h2>TIN TỨC NỔI BẬT</h2>
         </div>
         <div class="row">
             <div class="col-lg-12 mb-10">
                 <div class="owl-carousel slider_tintuc">
+                    @foreach($tintuc as $val)
                     <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
+                        <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                         <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
+                            <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+                            <p class="text-truncate-set text-truncate-set-3">{{$val->detail}}</p>
                         </div>
                     </div>
-                    <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
-                        <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
-                        </div>
-                    </div>
-                    <div class="item border-radius-10">
-                        <div class="img"><img src="frontend/img/24_2.jpg"></div>
-                        <div class="info">
-                            <h3>Bình phong cuốn thư - Phong thủy vẹn tròn</h3>
-                            <p>Cuốn thư đá thường được thi công cùng với các công trình tâm linh và mang nhiều ý nghĩa. ...</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="button"><button>Xem tất cả</button></div>
