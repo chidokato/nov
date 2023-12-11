@@ -56,11 +56,11 @@
                         </div>
                         <div class="dd222">
                             <div class="icon"><img src="frontend/img/hotline.png"></div>
-                            <p><strong>Hotline</strong><br>091.935.1155</p>
+                            <p><strong>Hotline</strong><br>{{$setting->hotline}}</p>
                         </div>
                         <div class="dd222">
                             <div class="icon"><img src="frontend/img/email.png"></div>
-                            <p><strong>Email</strong><br>anphatvinh@gmail.com</p>
+                            <p><strong>Email</strong><br>{{$setting->email}}</p>
                         </div>
                     </div>
                 </div>
