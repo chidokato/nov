@@ -12,7 +12,7 @@
 }
 
 .owl-carousel .owl-nav button span{
-    background: #0c5dad5c;
+    border: 2px #fff solid;
     color: #fff;
     width: 50px;
     height: 50px;
@@ -24,8 +24,8 @@
     line-height: 47px;
 }
 .owl-carousel .owl-nav button.owl-prev span{
-	left: 0px;
+	left: -50px;
 }
 .owl-carousel .owl-nav button.owl-next span{
-	right: 0px;
+	right: -50px;
 }

@@ -252,7 +252,7 @@ h2.heading-title::after {
 
 .flex-center{ align-items: center; }
 
-.nav-on-banner{ position:sticky !important; top:0px; background-color:#fff }
+.nav-on-banner{ position:sticky !important; top:0px; background: url(../../img/bg.png); background-repeat: no-repeat; background-size: cover; }
 
 .dd23423{ background:#cdb98d;  }
 .sss24234{ text-align:center; }
@@ -315,7 +315,7 @@ h2.heading-title::after {
 .swiper-slide.swiper-slide-active {transform: scale(1);}
 .swiper-slide__content {height: 300px;}
 .swiper-slide{ position:relative; }
-.swiper-slide .button{ position:absolute; bottom:40px }
+.swiper-slide .button{ position:absolute; bottom:65px }
 .swiper-slide .button button{ color:var(--main-color); background: #fff}
 /*swiper-container*/
 
@@ -383,3 +383,23 @@ footer{ margin:0; padding:0 }
 
 .img234{ width:auto; height:80px; padding: 10px 30px}
 .img234 img{ height:80px; width: auto;}
+
+.text-center{ text-align:center !important; }
+.text-center p{ text-align:center !important; }
+
+.bg-main{ background:#cb986680 }
+
+.sanpham{ background:#fff; padding-bottom:15px; margin-bottom:20px }
+.sanpham img{ width:100% }
+.sanpham h3{ margin-top:10px; color: var(--main-color); }
+.sanpham p{ margin-bottom:0px; font-size:1.1rem }
+.sanpham button{ margin-top:10px }
+.sanpham strong{ font-size:1.5rem }
+
+.color-white{ color: white; }
+.color-black{ color: black; }
+.size12{ font-size:1.2rem }
+
+.bg9b5015{ background: #9b5015; }
+
+.owl-carousel .owl-dots{ margin-top:0px }
