@@ -30,7 +30,7 @@
                     <h2>Công Viên Nghĩa trang Thiên Đường</h2>
                     <h3>Miền thảnh thơi, miền di sản…</h3>
                     <p>Cuộc đời là hành trình một chiều, mỗi khoảnh khắc trong cuộc đời là duy nhất. Phước lành đã cho chúng ta sống hết mình trên cuộc đời này, nhưng chúng ta cũng già đi…. Khi vầng dương đã tắt, bạn nhẹ nhàng buông bỏ để đi vào “MIỀN THẢNH THƠI”. Những thành tựu, yêu thương, nụ cười của bạn…sẽ trở thành “MIỀN DI SẢN” cho những người ở lại. Vì vậy, tại Công viên Nghĩa trang Thiên Đường, Chúng tôi trân trọng những câu chuyện cuộc đời và kiến tạo Dự Án không những trở thành nơi an nghỉ vĩnh hằng mà còn là nơi lưu giữ những giá trị của gia đình, họ tộc trường tồn mãi mãi…</p>
-                    <div class="button"><button onclick="location.href='.'">Tìm hiểu thêm</button></div>
+                    <div class="button"><button onclick="location.href='gioi-thieu'">Tìm hiểu thêm</button></div>
                 </div>
             </div>
             <div class="col-lg-12 flex-center">
@@ -80,7 +80,7 @@
                                 <div class="home-content aaa333">
                                     <h2>Phong Thủy Vượng Sơn Vượng Hướng</h2>
                                     <p>Địa hình dự án vững chãi, tựa sơn hướng thủy do được bao bọc bởi núi Là, xung quanh các quả đồi là dòng suối tự nhiên tạo nên hai hồ lớn. Công viên Nghĩa trang Thiên Đường nằm trên khu đất có dáng hình LINH QUY đại diện cho sự thông minh, mẫn cán và trường thọ. Dải đất này có mạch chạy theo hướng Tây Bắc - Đông Nam đem lại phúc lộc đời đời cho con cháu. </p>
-                                    <div class="button"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></div>
+                                    <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                                 <div class="home-content aaa333">
                                     <h2>Phong Thủy Vượng Sơn Vượng Hướng</h2>
                                     <p>Địa hình dự án vững chãi, tựa sơn hướng thủy do được bao bọc bởi núi Là, xung quanh các quả đồi là dòng suối tự nhiên tạo nên hai hồ lớn. Công viên Nghĩa trang Thiên Đường nằm trên khu đất có dáng hình LINH QUY đại diện cho sự thông minh, mẫn cán và trường thọ. Dải đất này có mạch chạy theo hướng Tây Bắc - Đông Nam đem lại phúc lộc đời đời cho con cháu. </p>
-                                    <div class="button"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></div>
+                                    <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                         <div class="sss111 aaa333">
                             <h2>Vị Trí Giao Thông Thuận Lợi</h2>
                             <p>Công viên Nghĩa trang Thiên Đường toạ lạc tại vị trí giao thông thuận lợi, kết nối với hệ thống đường cao tốc Phía Bắc: Hà Nội – Lào Cai, Phú Thọ - Tuyên Quang, Tuyên Quang – Hà Giang. </p>
-                            <div class="button"><button>ĐĂNG KÝ THAM QUAN MIỄN PHÍ</button></div>
+                            <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                         </div>
                     </div>
 
@@ -132,7 +132,7 @@
                         <div class="sss111 aaa333">
                             <h2>Vị Trí Giao Thông Thuận Lợi</h2>
                             <p>Công viên Nghĩa trang Thiên Đường toạ lạc tại vị trí giao thông thuận lợi, kết nối với hệ thống đường cao tốc Phía Bắc: Hà Nội – Lào Cai, Phú Thọ - Tuyên Quang, Tuyên Quang – Hà Giang. </p>
-                            <div class="button"><button>ĐĂNG KÝ THAM QUAN MIỄN PHÍ</button></div>
+                            <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                         </div>
                     </div>
                     
@@ -162,7 +162,7 @@
                             <p>Đã đưa vào sử dụng</p>
                             <p>Pháp lý rõ ràng</p>
                         </div>
-                        <div class="button"><button>Nhận tư vấn ngay</button></div>
+                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
@@ -177,7 +177,7 @@
                             <p>Đã đưa vào sử dụng</p>
                             <p>Pháp lý rõ ràng</p>
                         </div>
-                        <div class="button"><button>Nhận tư vấn ngay</button></div>
+                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
                             <p>Đã đưa vào sử dụng</p>
                             <p>Pháp lý rõ ràng</p>
                         </div>
-                        <div class="button"><button>Nhận tư vấn ngay</button></div>
+                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                             <p>Đã đưa vào sử dụng</p>
                             <p>Pháp lý rõ ràng</p>
                         </div>
-                        <div class="button"><button>Nhận tư vấn ngay</button></div>
+                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
@@ -313,7 +313,7 @@
         <div class="sss24234 pt-30">
             <h2>Dịch Vụ Hoàn Hảo</h2>
             <p class="color-black">Mong muốn mang đến cho khách hàng những khoảnh khắc trải nghiệm hoàn hảo, đội ngũ nhân sự tại Công viên Nghĩa trang Thiên Đường được đào tạo bài bản, chuyên nghiệp với sự tận tâm và tinh tế. Tại đây, Chúng tôi đảm bảo cung cấp đầy đủ các dịch vụ hiện đại và cao cấp bậc nhất Việt Nam</p>
-            <div class="button"><button>Tìm hiểu thêm dịch vụ</button></div>
+            <div class="button"><button onclick="location.href='tien-ich-dich-vu'">Tìm hiểu thêm dịch vụ</button></div>
         </div>
     </div>
     <div class="container">
@@ -369,7 +369,7 @@
         <div class="sss24234 pt-30 pb-30">
             <h2>Tiến độ dự án</h2>
             <p class="color-black">Khởi công từ ngày 05/07/2021, đến nay Dự án Công viên Nghĩa trang Thiên Đường đã hoàn thành thi công đến 90% các hạng mục, bao gồm: Chùa Báo Ân, Đền Trình, Trục Thần Đạo, công trình các Đại Tượng Phật như tượng Phật Thích Ca, tượng Quán Thế Âm Bồ Tát, nhà làm việc và dịch vụ…. Hiện tại, đơn vị đang tập trung hoàn thiện hạ tầng kỹ thuật, hệ thống cây xanh, cảnh quan và tiện ích.</p>
-            <div class="button"><button>TÌM HIỂU THÊM</button></div>
+            <!-- <div class="button"><button onclick="location.href='tien-ich-dich-vu'">TÌM HIỂU THÊM</button></div> -->
         </div>
     </div>
     <div class="container">

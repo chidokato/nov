@@ -210,7 +210,7 @@ textarea.form-control {
 	z-index: 99992;
 	width: 100%;
 	height: 100%;
-	overflow: hidden scroll !important
+/*	overflow: hidden scroll !important*/
 }
 .view-close {
 	cursor: pointer;
