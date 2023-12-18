@@ -5,8 +5,7 @@
 @include('admin.alert')
 <?php use App\Models\CategoryTranslation; ?>
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex">
-    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">{{__('lang.category')}}</h2>
-    <a class="add-iteam" href="{{route('category.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{__('lang.add')}}</button></a>
+    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Quản lý khách hàng</h2>
 </div>
 
 <div class="row">
@@ -25,7 +24,6 @@
                     <table class="table">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
