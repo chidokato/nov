@@ -29,7 +29,8 @@
                         <div class="form">
 		                    <h4 class="mb-3">LIÊN HỆ BÁO GIÁ</h4>
 		                    <!-- <p>Trân trọng kính mời Quý khách tham quan MIỄN PHÍ Công viên Thiên đường vào thứ 7 và Chủ nhật hàng tuần. Toàn bộ chi phí và việc đưa đón chuyến tham quan sẽ do Công viên Thiên đường hân hạnh đài thọ.</p> -->
-		                    <form class="form-icon-right" action="#" method="post">
+		                    <form class="form-icon-right" action="dangky" method="post">
+		                    	@csrf
 		                        <div class="row">
 		                            <div class="col-12 mb-10">
 		                                <div class="form-group mb-0">

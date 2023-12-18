@@ -12,6 +12,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Setting;
 use App\Models\Slider;
+use App\Models\Customer;
 
 // $locale = App::currentLocale();
 
@@ -134,5 +135,18 @@ class HomeController extends Controller
             ));
         }
         
+    }
+
+    public function dangky(Request $request)
+    {
+        $data = $request->all();
+        // dd($data);
+
+        $customer = new Customer;
+        $customer->name = $data['name'];
+        $customer->phone = $data['phone'];
+        $customer->email = $data['email'];
+        $customer->save();
+        return redirect()->back();
     }
 }
