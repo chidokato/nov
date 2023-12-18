@@ -8,26 +8,26 @@
                 <div class="form">
                     <h4>CHƯƠNG TRÌNH THAM QUAN CÔNG VIÊN THIÊN ĐƯỜNG</h4>
                     <p>Trân trọng kính mời Quý khách tham quan MIỄN PHÍ Công viên Thiên đường vào thứ 7 và Chủ nhật hàng tuần. Toàn bộ chi phí và việc đưa đón chuyến tham quan sẽ do Công viên Thiên đường hân hạnh đài thọ.</p>
-                    <form class="form-icon-right" action="#" method="post">
+                    <form class="form-icon-right" action="dangky" method="post"> @csrf
                         <div class="row">
                             <div class="col-12 mb-10">
                                 <div class="form-group mb-0">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" name="name" placeholder="Họ & Tên">
                                 </div>
                             </div>
                             <div class="col-12 mb-10">
                                 <div class="form-group mb-0">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone Number">
+                                    <input type="text" class="form-control" name="phone" placeholder="Số điện thoại">
                                 </div>
                             </div>
                             <div class="col-12 mb-10">
                                 <div class="form-group mb-0">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" name="email" placeholder="Địa chỉ Email">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group mb-0">
-                                    <button class="btn btn-primary w-100">ĐĂNG KÝ NGAY</button>
+                                    <button class="btn btn-primary w-100">GỬI NGAY</button>
                                 </div>
                             </div>
                         </div>
