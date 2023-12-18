@@ -33,7 +33,7 @@ class HomeController extends Controller
         $slider = Slider::get();
         $tienich = Post::whereIn('category_id', [66,70,71])->get();
         $tintuc = Post::whereIn('category_id', [68])->get();
-        $sanpham = Post::whereIn('category_id', [64])->get();
+        $sanpham = Post::whereIn('category_id', [64])->take(4)->get();
         return view('pages.home', compact(
             'slider',
             'tienich',
