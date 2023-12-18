@@ -61,12 +61,21 @@
                                   <textarea name="content" class="form-control" id="ckeditor">{{$data->content}}</textarea>
                               </div>
                           </div>
+                          @if($data->category_id == '64')
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Info</label>
+                                  <textarea name="info" class="form-control" id="ckeditor1">{{$data->info}}</textarea>
+                              </div>
+                          </div>
+                          @endif
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Title</label>
                                   <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
                               </div>
                           </div>
+                          
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Description</label>

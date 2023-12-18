@@ -151,66 +151,20 @@
             <p class="color-black size12">Trải qua quá trình nghiên cứu chuyên sâu, khảo sát tỉ mỉ, kiến trúc khuôn viên mộ phần được thiết kế đảm bảo chuẩn phong thủy và mang tính thẩm mỹ cao</p>
         </div>
         <div class="row">
+            @foreach($sanpham as $val)
             <div class="col-lg-6">
                 <div class="item border-radius-10 sanpham">
                     <div class="img"><a href=""><img src="frontend/img/kvgiatoc.jpg"></a></div>
                     <div class="info text-center">
-                        <a href=""><h3>KHUÔN VIÊN ĐƠN</h3></a>
+                        <a href=""><h3>{{$val->name}}</h3></a>
                         <div class="">
-                            <p>Chỉ từ: <strong>68 TRIỆU</strong> </p>
-                            <p>Kích thước: từ 3,5m2 được xây dựng theo nhu cầu chôn cất cá nhân</p>
-                            <p>Đã đưa vào sử dụng</p>
-                            <p>Pháp lý rõ ràng</p>
+                            {!! $val->info !!}
                         </div>
                         <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="item border-radius-10 sanpham">
-                    <div class="img"><a href=""><img src="frontend/img/kvgiatoc.jpg"></a></div>
-                    <div class="info text-center">
-                        <a href=""><h3>KHUÔN VIÊN ĐƠN</h3></a>
-                        <div class="">
-                            <p>Chỉ từ: <strong>68 TRIỆU</strong> </p>
-                            <p>Kích thước: từ 3,5m2 được xây dựng theo nhu cầu chôn cất cá nhân</p>
-                            <p>Đã đưa vào sử dụng</p>
-                            <p>Pháp lý rõ ràng</p>
-                        </div>
-                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="item border-radius-10 sanpham">
-                    <div class="img"><a href=""><img src="frontend/img/kvgiatoc.jpg"></a></div>
-                    <div class="info text-center">
-                        <a href=""><h3>KHUÔN VIÊN ĐƠN</h3></a>
-                        <div class="">
-                            <p>Chỉ từ: <strong>68 TRIỆU</strong> </p>
-                            <p>Kích thước: từ 3,5m2 được xây dựng theo nhu cầu chôn cất cá nhân</p>
-                            <p>Đã đưa vào sử dụng</p>
-                            <p>Pháp lý rõ ràng</p>
-                        </div>
-                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="item border-radius-10 sanpham">
-                    <div class="img"><a href=""><img src="frontend/img/kvgiatoc.jpg"></a></div>
-                    <div class="info text-center">
-                        <a href=""><h3>KHUÔN VIÊN ĐƠN</h3></a>
-                        <div class="">
-                            <p>Chỉ từ: <strong>68 TRIỆU</strong> </p>
-                            <p>Kích thước: từ 3,5m2 được xây dựng theo nhu cầu chôn cất cá nhân</p>
-                            <p>Đã đưa vào sử dụng</p>
-                            <p>Pháp lý rõ ràng</p>
-                        </div>
-                        <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <!-- <div class="sad234234">
             <div class="tab mb-20">
