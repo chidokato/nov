@@ -247,7 +247,7 @@ h2.heading-title::after {
 .section-1 .flex-center {justify-content: flex-end;}
 .section-1 .home-content h2{ color:var(--main-color); font-size:1.8rem; text-align:center; }
 .section-1 .home-content h3{ color:#000; font-size:1.4rem; text-align:center; }
-.section-1 .home-content p{ text-align:justify; color:#000; font-size:1rem }
+.section-1 .home-content p{ text-align:justify; color:#000; font-size:1.1rem }
 .img80 img{ width:80% !important; margin:0 auto; }
 
 .flex-center{ align-items: center; }
@@ -257,6 +257,7 @@ h2.heading-title::after {
 .dd23423{ background:#cdb98d;  }
 .sss24234{ text-align:center; }
 .sss24234 h2{ text-align:center; color:var(--main-color); font-size:1.6rem; text-transform:uppercase; }
+.sss24234 p{ font-size:1.1rem }
 .dd234234{ padding:30px }
 .dd234234 h3{ text-align:center; color: #9B5015;  }
 .dd234234 p{ color: #000;  }
@@ -264,6 +265,7 @@ h2.heading-title::after {
 .button button{ background:#9B5015; color:#fff; border:none; border-radius:3px; padding:5px 20px; }
 .aaa333{ background:var(--main-color); padding:30px; color:#fff; text-align:justify; }
 .aaa333 h2{ color:#fff; font-size:1.6rem; text-align:center; }
+.aaa333 p{ font-size:1.1rem }
 .aaa333 .button button{ background:#fff; color:var(--main-color); font-weight:bold; }
 .aaa333 .button { text-align:center; }
 
@@ -387,7 +389,7 @@ footer{ margin:0; padding:0 }
 .text-center{ text-align:center !important; }
 .text-center p{ text-align:center !important; }
 
-.bg-main{ background:#cb986680 }
+.bg-main{ background:#cb986626 }
 
 .sanpham{ background:#fff; padding-bottom:15px; margin-bottom:20px }
 .sanpham img{ width:100% }
