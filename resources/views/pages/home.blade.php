@@ -29,7 +29,10 @@
                 <div class="home-content text-center">
                     <h2>Công Viên Nghĩa trang Thiên Đường</h2>
                     <h3>Miền thảnh thơi, miền di sản…</h3>
-                    <p>Cuộc đời là hành trình một chiều, mỗi khoảnh khắc trong cuộc đời là duy nhất. Phước lành đã cho chúng ta sống hết mình trên cuộc đời này, nhưng chúng ta cũng già đi…. Khi vầng dương đã tắt, bạn nhẹ nhàng buông bỏ để đi vào “MIỀN THẢNH THƠI”. Những thành tựu, yêu thương, nụ cười của bạn…sẽ trở thành “MIỀN DI SẢN” cho những người ở lại. Vì vậy, tại Công viên Nghĩa trang Thiên Đường, Chúng tôi trân trọng những câu chuyện cuộc đời và kiến tạo Dự Án không những trở thành nơi an nghỉ vĩnh hằng mà còn là nơi lưu giữ những giá trị của gia đình, họ tộc trường tồn mãi mãi…</p>
+                    <p>Công viên nghĩa trang Thiên Đường cao cấp bậc nhất Việt Nam tại Tuyên Quang: Nơi quê hương cách mạng, Vùng đất linh thiêng của Mẫu thượng ngàn.
+Chỉ cách Hà Nội 75 phút di chuyển hoàn toàn bằng cao tốc, Công Viên Thiên Đường là “Miền thảnh thơi – Miền di sản” ôm ấp giấc ngủ ngàn thu cho các hương linh.
+Tọa lạc tại thế đất hình Linh Quy, Công viên Thiên Đường sở hữu địa thế phong thủy vượng sơn vượng hướng: Lưng tựa Núi Là trùng điệp, mặt hướng suối ngọc hiền hòa.
+Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn và vẻ đẹp kiến trúc Á Đông, hệ thống tiện ích dịch vụ đầy đủ, tận tâm cùng quần thể các công trình tâm linh, Công viên Thiên đường sẽ là nơi sum họp, lưu giữ những giá trị của gia đình, họ tộc trường tồn mãi mãi.</p>
                     <div class="button"><button onclick="location.href='gioi-thieu'">Tìm hiểu thêm</button></div>
                 </div>
             </div>
