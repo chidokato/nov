@@ -154,7 +154,7 @@
             @foreach($sanpham as $val)
             <div class="col-lg-6">
                 <div class="item border-radius-10 sanpham">
-                    <div class="img"><a href=""><img src="frontend/img/kvgiatoc.jpg"></a></div>
+                    <div class="img"><a href=""><img src="data/product/{{$val->img}}"></a></div>
                     <div class="info text-center">
                         <a href=""><h3>{{$val->name}}</h3></a>
                         <div class="">
