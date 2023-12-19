@@ -26,8 +26,8 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Category</th>
                                 <th>Slug</th>
+                                <th>Category</th>
                                 <th>Status</th>
                                 <!-- <th>Sort By</th> -->
                                 <th>date</th>
@@ -42,7 +42,7 @@
                                 <td class="thumb"><img src="data/news/{{$val->img}}"></td>
                                 <td><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></td>
                                 <td>{{$val->slug}}</td>
-                                <td>{{$val->category->name}}</td>
+                                <td>{{$val->category_id ? $val->category->name : ''}}</td>
                                 <td>
                                     <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status_post' ><span class="checkmark"></span></label>
                                 </td>
