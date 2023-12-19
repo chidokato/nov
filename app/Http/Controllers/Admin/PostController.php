@@ -127,7 +127,9 @@ class PostController extends Controller
         $post->name = $data['name'];
         $post->category_id = $data['category_id'];
         $post->detail = $data['detail'];
-        $post->info = $data['info'];
+        if ($data['info']) {
+            $post->info = $data['info'];
+        }
         $post->content = $data['content'];
         $post->title = $data['title'];
         $post->description = $data['description'];
