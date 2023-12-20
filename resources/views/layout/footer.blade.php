@@ -52,7 +52,7 @@
                         </div>
                         <div class="dd222">
                             <div class="icon"><img src="frontend/img/vanphong.png"></div>
-                            <p><strong>Văn phòng Hà Nội</strong><br>Tầng 5 tòa LICOGI 13, số 164 Khuất Duy Tiến, Nhân Chính, quận Thanh Xuân, Hà Nội</p>
+                            <p><strong>Văn phòng Hà Nội</strong><br>{{$setting->address}}</p>
                         </div>
                         <div class="dd222">
                             <div class="icon"><img src="frontend/img/hotline.png"></div>
