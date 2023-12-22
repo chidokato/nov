@@ -72,7 +72,7 @@
 <!--============== Footer Section End ==============-->
 
 <!-- Scroll to top -->
-<div class="scroll-top-vertical xs-mx-none" id="scroll">Go Top <i class="ms-2 fa-solid fa-arrow-right-long"></i></div>
+<!-- <div class="scroll-top-vertical xs-mx-none" id="scroll">Go Top <i class="ms-2 fa-solid fa-arrow-right-long"></i></div> -->
 <!-- End Scroll To top -->
 
 @include('layout.popup')
