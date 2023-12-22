@@ -159,15 +159,103 @@ Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn
                 <div class="item border-radius-10 sanpham">
                     <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}"></a></div>
                     <div class="info text-center">
-                        <a href="{{$val->category->slug}}/{{$val->slug}}"><h3>{{$val->name}}</h3></a>
-                        <div class="">
-                            {!! $val->info !!}
+                        <a href="{{$val->category->slug}}/{{$val->slug}}"><h3 class="mb-4">{{$val->name}}</h3></a>
+                        @if($val->name == 'Khuôn viên Gia đình')
+                        <div class="a558">
+                            <div class="a5881">
+                                Giá bán: <strong>11</strong> triệu/m<sup>2</sup>
+                            </div>
+                            <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
                         </div>
+                        <hr>
+                        <div class="a558">
+                            <div class="a5881">
+                                Diện tích khuân viên: <strong>20</strong> m<sup>2</sup> trở lên
+                            </div>
+                            <div class="a5881">
+                                kim tĩnh tối đa: <strong>5</strong> m<sup>2</sup>/ngôi
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="a559 a558">
+                            <div class="a5591">30m2 (Mâu 1 và 2)</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">20m2 (Mâu 1 và 2)</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">40m2</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">60m2</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">80m2</div>
+                        </div>
+                        @elseif($val->name == 'Khuôn viên Gia tộc')
+                        <div class="a558">
+                            <div class="a5881">
+                                Giá bán: <strong>12</strong> triệu/m<sup>2</sup>
+                            </div>
+                            <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
+                        </div>
+                        <hr>
+                        <div class="a558">
+                            <div class="a5881">
+                                Diện tích khuân viên: <strong>200</strong> m<sup>2</sup> trở lên
+                            </div>
+                            <div class="a5881">
+                                kim tĩnh tối đa: <strong>5</strong> m<sup>2</sup>/ngôi
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="a559 a558">
+                            <div class="a5591">Lô góc cơ đỉnh</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">Lô VIP 2 cơ</div>
+                            <div class="hr">|</div>
+                            <div class="a5591">Lô giữa cơ đỉnh</div>
+                        </div>
+                        @elseif($val->name == 'Khuôn viên Đôi')
+                        <div class="a558">
+                            <div class="a5881">
+                                Giá bán: <strong>164</strong> triệu/ngôi
+                            </div>
+                            <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
+                        </div>
+                        <hr>
+                        <div class="a558">
+                            <div class="a5881">
+                                Kích thước: từ <strong>8-12</strong> m<sup>2</sup>
+                            </div>
+                            <div class="a5881">
+                                Bàn giao hoàn thiện toàn bộ
+                            </div>
+                        </div>
+                        @elseif($val->name == 'Khuôn viên Đơn')
+                        <div class="a558">
+                            <div class="a5881">
+                                Giá bán: <strong>64</strong> triệu/ngôi
+                            </div>
+                            <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
+                        </div>
+                        <hr>
+                        <div class="a558">
+                            <div class="a5881">
+                                Kích thước: <strong>3.5</strong> m<sup>2</sup>
+                            </div>
+                            <div class="a5881">
+                                Bàn giao hoàn thiện toàn bộ
+                            </div>
+                        </div>
+                        @endif
+                        <hr>
                         <div class="button"><a class="quick-view" href="#quick-view"><button>ĐĂNG KÝ NHẬN TƯ VẤN</button></a></div>
                     </div>
                 </div>
             </div>
             @endforeach
+            <style type="text/css">
+                .a558{ display:flex;align-items: center;justify-content: space-evenly; }
+                .a5881{ font-size:1.1rem }
+                .a5591{ background:url(frontend/img/dientich.png) no-repeat left 6px; padding-left:15px; font-size:1rem }
+            </style>
         </div>
         <!-- <div class="sad234234">
             <div class="tab mb-20">

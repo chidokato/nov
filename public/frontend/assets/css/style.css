@@ -138,9 +138,9 @@ p:last-child {
     margin-bottom: 0;
 }
 sup {
-	top: -10px;
+	top: -8px;
 	left: inherit;
-	right: -3px;
+	right: 0px;
 }
 label {
 	margin-bottom: 0px

@@ -396,7 +396,7 @@ footer{ margin:0; padding:0 }
 .sanpham h3{ margin-top:10px; color: var(--main-color); }
 .sanpham p{ margin-bottom:0px; font-size:1.1rem }
 .sanpham button{ margin-top:10px }
-.sanpham strong{ font-size:1.5rem }
+.sanpham strong{ font-size:1.5rem; color: var(--main-color); }
 
 .color-white{ color: white; }
 .color-black{ color: black; }
