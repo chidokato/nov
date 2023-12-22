@@ -2,8 +2,8 @@
 	<ul>
 		<li><a class="quick-view" href="#quick-view" ><img src="frontend/img/form.png"></a></li>
 		<li><a href="http://zalo.me/0389301518"><img src="frontend/img/zalo.png"></a></li>
-		<li><a href="https://www.facebook.com/duancongvienthienduong/"><img src="frontend/img/facebook_icon.png"></a></li>
-		<li><a href="https://www.youtube.com/watch?v=2RDwX7ppUrg"><img src="frontend/img/youtube.png"></a></li>
+		<li><a target="_blank" href="https://www.facebook.com/duancongvienthienduong/"><img src="frontend/img/facebook_icon.png"></a></li>
+		<li><a target="_blank" href="https://www.youtube.com/watch?v=2RDwX7ppUrg"><img src="frontend/img/youtube.png"></a></li>
 		<li><a href="tel:0389301518"><img src="frontend/img/phone.png"></a></li>
 		
 	</ul>
@@ -37,12 +37,12 @@
 		                        <div class="row">
 		                            <div class="col-12 mb-10">
 		                                <div class="form-group mb-0">
-		                                    <input type="text" class="form-control" name="name" placeholder="Họ & Tên">
+		                                    <input required type="text" class="form-control" name="name" placeholder="Họ & Tên *">
 		                                </div>
 		                            </div>
 		                            <div class="col-12 mb-10">
 		                                <div class="form-group mb-0">
-		                                    <input type="text" class="form-control" name="phone" placeholder="Số điện thoại">
+		                                    <input required type="text" class="form-control" name="phone" placeholder="Số điện thoại *">
 		                                </div>
 		                            </div>
 		                            <div class="col-12 mb-10">
