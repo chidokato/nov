@@ -246,6 +246,9 @@ Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn
                             <div class="a5881">
                                 Kích thước: <strong>3.5</strong> m<sup>2</sup>
                             </div>
+                        </div>
+                        <hr>
+                        <div class="a558">
                             <div class="a5881">
                                 Bàn giao hoàn thiện toàn bộ
                             </div>
