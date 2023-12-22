@@ -230,9 +230,9 @@ Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn
                         </div>
                         <hr>
                         <div class="a559 a558">
-                            <div class="a5591">Mộ đôi tiêu chuẩn: 8m<sup>2</sup></div>
+                            <div class="a5591">Mộ đôi tiêu chuẩn: <strong>8</strong> m<sup>2</sup></div>
                             <div class="hr">|</div>
-                            <div class="a5591">Mộ đôi VIP: 12m<sup>2</sup></div>
+                            <div class="a5591">Mộ đôi VIP: <strong>12</strong> m<sup>2</sup></div>
                         </div>
                         @elseif($val->name == 'Khuôn viên Đơn')
                         <div class="a558">
