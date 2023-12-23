@@ -405,3 +405,7 @@ footer{ margin:0; padding:0 }
 .bg9b5015{ background: #9b5015; }
 
 .owl-carousel .owl-dots{ margin-top:0px }
+
+.page-item.active .page-link {background-color: var(--main-color);border-color: var(--main-color);}
+.page-item.active .page-link{ border-color: var(--main-color); }
+.page-link{ color:var(--main-color); }
