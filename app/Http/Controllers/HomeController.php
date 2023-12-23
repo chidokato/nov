@@ -91,7 +91,7 @@ class HomeController extends Controller
             ));
         }
         elseif($slug == 'tien-ich-dich-vu' || $slug == 'tien-ich' || $slug == 'dich-vu'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(1);
+            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(10);
             return view('pages.category.tienich', compact(
                 'data',
                 'post'
