@@ -372,7 +372,7 @@ footer{ margin:0; padding:0 }
 .ggg44 p{ font-size:1.3rem; color:var(--main-color); }
 
 .item_news img{ border-radius: 10px 10px 0px 0px }
-.item_news h2{ text-align:center; font-size:1.5rem; color:var(--main-color); line-height:1.5rem; margin-top:10px }
+.item_news h2{ text-align:center; font-size:1.3rem; color:var(--main-color); line-height:1.7rem; margin-top:10px }
 .item_news .detail{ text-align:justify; }
 .text-truncate-set-2 {-webkit-line-clamp: 2;}
 .text-truncate-set-2 {-webkit-line-clamp: 2;}
