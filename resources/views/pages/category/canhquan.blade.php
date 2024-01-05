@@ -21,7 +21,7 @@
     <div class="container ">
         <div class="row">
             @foreach($post as $val)
-            <div class="col-lg-4">
+            <div class="col-lg-4 mb-3">
                 <div class="item_news border-radius-10">
                     <div class="img"><a href="{{$val->category->slug}}/{{$val->slug}}"><img class="h234" src="data/news/{{$val->img}}"></a></div>
                     <div class="info p-2">
@@ -31,6 +31,7 @@
                 </div>
             </div>
             @endforeach
+            {{ $post->links() }}
         </div>
     </div>
 </div>
