@@ -84,7 +84,7 @@ class HomeController extends Controller
             ));
         }
         elseif($slug == 'canh-quan'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(8);
+            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(9);
             return view('pages.category.canhquan', compact(
                 'data',
                 'post'
