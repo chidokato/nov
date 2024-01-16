@@ -104,7 +104,7 @@ class HomeController extends Controller
                 'post'
             ));
         }
-        elseif($slug == 'tin-tuc'){
+        elseif($slug == 'tin-tuc' || $slug == 'bao-chi-viet-ve-cong-vien-thien-duong' || $slug == 'chuong-trinh-uu-dai-va-su-kien' || $slug == 'ban-tin-ve-cong-vien-thien-duong' || $slug == 'the-gioi-tam-linh'){
             $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(9);
             return view('pages.category.canhquan', compact(
                 'data',
