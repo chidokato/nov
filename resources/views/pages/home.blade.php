@@ -163,7 +163,7 @@ Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn
                         @if($val->name == 'Khuôn viên Gia đình')
                         <div class="a558">
                             <div class="a5881">
-                                Giá bán: <strong>11</strong> triệu/m<sup>2</sup>
+                                Giá bán: <strong>12</strong> triệu/m<sup>2</sup>
                             </div>
                             <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
                         </div>
@@ -237,7 +237,7 @@ Với khuôn viên mộ phần kế thừa tinh hoa lăng tẩm triều Nguyễn
                         @elseif($val->name == 'Khuôn viên Đơn')
                         <div class="a558">
                             <div class="a5881">
-                                Giá bán: <strong>64</strong> triệu/ngôi
+                                Giá bán: <strong>80</strong> triệu/ngôi
                             </div>
                             <div class="a5881" style="background: url(frontend/img/tick.png) no-repeat left 5px; padding-left: 25px;">Pháp lý rõ ràng</div>
                         </div>
