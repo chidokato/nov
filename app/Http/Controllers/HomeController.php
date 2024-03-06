@@ -42,6 +42,16 @@ class HomeController extends Controller
         ));
     }
 
+    public function sitemap()
+    {
+        $category = Category::all();
+        $post = Post::all();
+        return response()->view('sitemap', [
+            'category' => $category,
+            'post' => $post,
+            ])->header('Content-Type', 'text/xml');
+    }
+
     // public function about()
     // {
     //     $category = CategoryTranslation::join('categories', 'categories.id', '=', 'category_translations.category_id')

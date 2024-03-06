@@ -82,7 +82,7 @@ Route::middleware(['auth'])->group(function () {
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('dangky', [HomeController::class, 'dangky']);
-// Route::get('about', [HomeController::class, 'about'])->name('about');
+Route::get('sitemap.xml', [HomeController::class, 'sitemap'])->name('sitemap');
 // Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('{slug}', [HomeController::class, 'category']);
 Route::get('{catslug}/{slug}', [HomeController::class, 'post']);
