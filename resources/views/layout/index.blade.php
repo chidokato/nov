@@ -58,6 +58,8 @@
     <link href="admin_asset/select2/css/select2.min.css" rel="stylesheet">
 
     @yield('css')
+
+    {!! $setting->header !!}
     
 </head>
 
@@ -91,6 +93,7 @@
 
     @yield('js')
 
+    {!! $setting->footer !!}
     
 </body>
 
