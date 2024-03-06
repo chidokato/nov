@@ -365,6 +365,7 @@ footer{ margin:0; padding:0 }
 
 .post h1{ color:var(--main-color) !important; font-size:1.7rem; margin-bottom:20px }
 .post h2{ font-size:1.3rem; line-height:1.7rem; margin-bottom:15px }
+.post h3{ font-size:1.2rem; line-height:1.7rem; margin-bottom:15px }
 .post p{ font-size:1rem; line-height:1.7rem; margin-bottom:10px; text-align:justify; }
 .post img{ width:auto !important; height:auto!important; }
 
